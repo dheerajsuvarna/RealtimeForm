@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DKV Xpress</title>
+        
+        <!-- Call Bootstrap -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>DKV Xpress</h1>
+
+                <!-- The todolist -->
+                <ul id="todolist"></ul>
+                <h3 style="right:0" id="role"></h3>
+                <!-- The form to add task -->
+                <form action="/" method="post" id="todolistForm">
+                    <div class="form-group">
+                        <label for="task">Issue</label>
+                        <input type="text" class="form-control input-lg" name="task" id="task" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task">Number Plate</label>
+                        <input type="text" class="form-control input-lg" name="task" id="noPlate" required>
+                        <h4 id="updatedBy"></h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="task">DKV Number</label>
+                        <input type="text" class="form-control input-lg" name="task" id="dkvNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task">Destination</label>
+                        <input type="text" class="form-control input-lg" name="task" id="dest" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task">Truck Model</label>
+                        <input type="text" class="form-control input-lg" name="task" id="truckModel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task">Tyre Brand</label>
+                        <input type="text" class="form-control input-lg" name="task" id="tyreBrand" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task">Diameter of Tyre</label>
+                        <input type="text" class="form-control input-lg" name="task" id="diameter" required>
+                    </div>
+                    <button  type="submit" class="btn btn-primary btn-lg" id="sendTask">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Call JS files -->
+        <script src="http://code.jquery.com/jquery-1.12.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/Xpress.js"></script>
+    </body>
+</html>
