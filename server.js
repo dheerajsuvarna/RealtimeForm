@@ -110,5 +110,6 @@ socket.on('updateDiameter', function(diameter)
         socketio.sockets.emit('updateTask', todolist);
     });
 });
-
-server.listen(8080);
+server.listen(process.env.PORT || 8080, function(){
+    console.log("Express server listening on port %d", this.address().port);
+  });
