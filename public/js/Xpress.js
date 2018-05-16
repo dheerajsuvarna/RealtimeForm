@@ -4,7 +4,7 @@ $( document ).ready(function() {
     myHeader.innerText = "Role : " + role;
 });
 // Connect to socket.io
-var socket = io.connect('https://shared-doc.herokuapp.com/:55314');
+var socket = io.connect();
 
 // On first connect, retrieves all tasks
 socket.on('updateTask', function(todolist) {
