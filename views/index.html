@@ -7,6 +7,24 @@
         
         <!-- Call Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+        .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+        </style>
     </head>
 
     <body>
@@ -65,6 +83,9 @@
                     <a class="btn btn-primary btn-lg" id="tracking" style="display:none" onclick="tracking()">Send Tracking Details</a>
                     <a class="btn btn-primary btn-lg" id="invoice" style="display:none" onclick="invoice()">Generate Invoice</a>
                 </form>
+               <!-- <a href="#" class="float">
+                        <i class="fa fa-plus my-float"></i>
+                        </a>-->
             </div>
         </div>
         <!-- Call JS files -->
@@ -72,4 +93,5 @@
         <script src="/socket.io/socket.io.js"></script>
         <script src="js/Xpress.js"></script>
     </body>
+
 </html>
