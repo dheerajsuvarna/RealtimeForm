@@ -5,6 +5,7 @@ var workshop_btn = document.getElementById('workshop_selected');
 var tracking_btn = document.getElementById('tracking');
 var invoice_btn = document.getElementById('invoice');
 var current_status = 0;
+var status_line = document.getElementById("status_line");
 // Connect to socket.io
 var socket = io.connect();
 
@@ -42,6 +43,7 @@ function confirm(){
     document.getElementById("status").src = "images/status_2.png";
     confirm_btn.style.display = 'none';
     workshop_btn.style.display = 'block';
+    status_line.innerText = "***** Status: Ticket has been Verified *****"
     current_status = 2;
     disable_fields();
     socket.emit('status_2', current_status);
@@ -50,6 +52,7 @@ function confirm(){
 function workshop(){
     var test = null;
     document.getElementById("status").src = "images/status_3.png";
+    status_line.innerText = "*** Status: Info Forwarded to Workshop ***"
     workshop_btn.style.display = 'none';
     tracking_btn.style.display = 'block';
     current_status = 3;
@@ -59,6 +62,7 @@ function workshop(){
 function tracking(){
     var test = null;
     document.getElementById("status").src = "images/status_4.png";
+    status_line.innerText = "*** Status: Service Car is on the Way ***"
     tracking_btn.style.display = 'none';
     invoice_btn.style.display = 'block';
     current_status = 4;
@@ -67,6 +71,7 @@ function tracking(){
 
 function invoice(){   
     var test = null;
+    status_line.innerText = "*********** Status: Ticket Closed ***********"
     current_status = 5;
     document.getElementById("status").src = "images/status_5.png";
     socket.emit('status_5  ', test);
@@ -260,15 +265,19 @@ socket.on('status_5', function() {
 
 function changeimg_status2(){
     document.getElementById("status").src = "images/status_2.png";
+    status_line.innerText = "***** Status: Ticket has been Verified *****"
 }
 function changeimg_status3(){
     document.getElementById("status").src = "images/status_3.png";
+    status_line.innerText = "*** Status: Info Forwarded to Workshop ***"
 }
 function changeimg_status4(){
     document.getElementById("status").src = "images/status_4.png";
+    status_line.innerText = "*** Status: Service Car is on the Way ***"
 }
 function changeimg_status4(){
     document.getElementById("status").src = "images/status_5.png";
+    status_line.innerText = "*********** Status: Ticket Closed ***********"
 }
 function disable_fields(){
     document.getElementById("task").disabled = 'true';
