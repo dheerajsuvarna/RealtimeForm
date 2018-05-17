@@ -10,10 +10,15 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row">
-                <h1>DKV Xpress</h1>
+        <div class="container" >
+                <div class="row">
 
+                        <img id="status" style="width:100%;max-height:200px" src="images/status_1.png">
+    
+                    </div>
+            <div class="row col-lg-8 col-xs-12 col-centered">
+                <h1></h1>
+                
                 <!-- The todolist -->
                 <ul id="todolist"></ul>
                 <h3 style="right:0" id="role"></h3>
@@ -21,34 +26,40 @@
                 <form action="/" method="post" id="todolistForm">
                     <div class="form-group">
                         <label for="task">Issue</label>
-                        <input type="text" class="form-control input-lg" name="task" id="task" required>
+                        <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
                     </div>
+                    <div class="form-group">
+                            <label for="task">DKV Number</label>
+                            <input type="text" value="704310-215676-50090" class="form-control input-lg" name="task" id="dkvNo" required>
+                        </div>
                     <div class="form-group">
                         <label for="task">Number Plate</label>
-                        <input type="text" class="form-control input-lg" name="task" id="noPlate" required>
+                        <input type="text" value="Y-127-508" class="form-control input-lg" name="task" id="noPlate" required>
                         <h4 id="updatedBy"></h4>
                     </div>
-                    <div class="form-group">
-                        <label for="task">DKV Number</label>
-                        <input type="text" class="form-control input-lg" name="task" id="dkvNo" required>
-                    </div>
-                    <div class="form-group">
+                   
+                   <!-- <div class="form-group">
                         <label for="task">Destination</label>
                         <input type="text" class="form-control input-lg" name="task" id="dest" required>
+                    </div> -->
+                    <div class="form-group">
+                            <label for="task">Spare Part</label>
+                            <input type="text" value="Tyre Brand: Michelin / Diameter : 22.5" class="form-control input-lg" name="task" id="diameter" required>
+                        </div>
+                    <div class="form-group">
+                        <label for="task">Truck</label>
+                        <input type="text" value="MAN" class="form-control input-lg" name="task" id="truckModel" required>
                     </div>
                     <div class="form-group">
-                        <label for="task">Truck Model</label>
-                        <input type="text" class="form-control input-lg" name="task" id="truckModel" required>
+                        <label for="task">Model</label>
+                        <input type="text" value="LE / L2000" class="form-control input-lg" name="task" id="tyreBrand" required>
                     </div>
-                    <div class="form-group">
-                        <label for="task">Tyre Brand</label>
-                        <input type="text" class="form-control input-lg" name="task" id="tyreBrand" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="task">Diameter of Tyre</label>
-                        <input type="text" class="form-control input-lg" name="task" id="diameter" required>
-                    </div>
-                    <button  type="submit" class="btn btn-primary btn-lg" id="sendTask">Submit</button>
+                    
+                   <!-- <button  type="submit" class="btn btn-primary btn-lg" id="sendTask">Submit</button>-->
+                    <a class="btn btn-primary btn-lg" id="confirm" onclick="confirm()">Confirm</a>
+                    <a class="btn btn-primary btn-lg" id="workshop_selected" style="display:none" onclick="workshop()">Workshop Selected</a>
+                    <a class="btn btn-primary btn-lg" id="tracking" style="display:none" onclick="tracking()">Send Tracking Details</a>
+                    <a class="btn btn-primary btn-lg" id="invoice" style="display:none" onclick="invoice()">Generate Invoice</a>
                 </form>
             </div>
         </div>

@@ -99,7 +99,30 @@ socket.on('updateDiameter', function(diameter)
 });
 
 
-    
+socket.on('status_2', function(test)
+{  
+   socket.broadcast.emit('status_2');
+});
+socket.on('status_3', function(test)
+{   
+   socket.broadcast.emit('status_3');
+});
+socket.on('status_4', function(test)
+{  
+   socket.broadcast.emit('status_4');
+});
+socket.on('status_5', function(test)
+{
+   socket.broadcast.emit('status_5');
+});
+
+
+
+
+
+
+
+
     // Delete tasks
     socket.on('deleteTask', function(index)
     {

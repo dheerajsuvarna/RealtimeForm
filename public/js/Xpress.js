@@ -1,8 +1,10 @@
-$( document ).ready(function() {
-    var role = getAllUrlParams(window.location.href).role;
-    var myHeader = document.getElementById("role");
-    myHeader.innerText = "Role : " + role;
-});
+
+var confirm_btn = document.getElementById('confirm');
+var status = document.getElementById('status');
+var workshop_btn = document.getElementById('workshop_selected');
+var tracking_btn = document.getElementById('tracking');
+var invoice_btn = document.getElementById('invoice');
+var current_status = 0;
 // Connect to socket.io
 var socket = io.connect();
 
@@ -13,6 +15,63 @@ socket.on('updateTask', function(todolist) {
         insertTask(task, index);
     });
 });
+
+
+
+$( document ).ready(function() {
+    var role = getAllUrlParams(window.location.href).role;
+   // var myHeader = document.getElementById("role");
+    //myHeader.innerText = "Role : " + role;
+
+    if(role == 'esc'){
+        confirm_btn.style.display = 'block';
+    }
+
+    if(role != 'esc'){
+        confirm_btn.style.display = 'none';
+        workshop_btn.style.display = 'none';
+    }
+
+    if(current_status >= 2){
+   
+
+    }
+});
+
+function confirm(){
+    document.getElementById("status").src = "images/status_2.png";
+    confirm_btn.style.display = 'none';
+    workshop_btn.style.display = 'block';
+    current_status = 2;
+    disable_fields();
+    socket.emit('status_2', current_status);
+}
+
+function workshop(){
+    var test = null;
+    document.getElementById("status").src = "images/status_3.png";
+    workshop_btn.style.display = 'none';
+    tracking_btn.style.display = 'block';
+    current_status = 3;
+    socket.emit('status_3', test);
+
+}
+function tracking(){
+    var test = null;
+    document.getElementById("status").src = "images/status_4.png";
+    tracking_btn.style.display = 'none';
+    invoice_btn.style.display = 'block';
+    current_status = 4;
+    socket.emit('status_4', test);
+}
+
+function invoice(){   
+    var test = null;
+    current_status = 5;
+    document.getElementById("status").src = "images/status_5.png";
+    socket.emit('status_5  ', test);
+}
+
 
 
 $('#todolistForm').submit(function ()
@@ -181,8 +240,44 @@ socket.on('addTask', function(data) {
     
 });
 
+socket.on('status_2', function() {
+    changeimg_status2();
+    disable_fields();
+    
+});
+socket.on('status_3', function() {
+    changeimg_status3();
+    
+});
+socket.on('status_4', function() {
+    changeimg_status4();
+    
+});
+socket.on('status_5', function() {
+    changeimg_status5();
+    
+});
 
-
+function changeimg_status2(){
+    document.getElementById("status").src = "images/status_2.png";
+}
+function changeimg_status3(){
+    document.getElementById("status").src = "images/status_3.png";
+}
+function changeimg_status4(){
+    document.getElementById("status").src = "images/status_4.png";
+}
+function changeimg_status4(){
+    document.getElementById("status").src = "images/status_5.png";
+}
+function disable_fields(){
+    document.getElementById("task").disabled = 'true';
+    document.getElementById("dkvNo").disabled = 'true';
+    document.getElementById("noPlate").disabled = 'true';
+    document.getElementById("truckModel").disabled = 'true';
+    document.getElementById("tyreBrand").disabled = 'true';
+    document.getElementById("diameter").disabled = 'true';
+}
 /**
  * Add task in the page
  * 
