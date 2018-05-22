@@ -1,0 +1,194 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+
+
+.mdl-card__actions { background-color: rgba(222, 222, 222, 0.25); }
+
+#regForm {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1%
+}
+
+#formContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1%
+}
+
+.demo-card-square.mdl-card {
+  width: 29%;
+  height: 200px;
+  float: left;
+  margin: 2%;
+  position: relative;
+}
+
+.demo-card-square.mdl-card:hover {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background: #03a9f4;
+}
+
+.demo-card-square > .mdl-card__accent {
+  background: #ff9800;
+}
+
+.mdl-grid {
+	max-width: 100%;
+  margin-top: 30px;
+  max-height: 30%;
+}
+/* custom styles */
+
+.acme-card {
+	width: 25%;
+  height: 40%;
+  float: left;
+  position: relative;
+  margin: 1%;
+}
+.acme-card-file {
+	padding: 1em;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+:root {
+  --borderWidth: 7px;
+  --height:10%;
+  --width: 10%;
+  --borderColor: #78b13f;
+}
+
+.check {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: var(--height);
+  width: var(--width);
+  margin: 0 auto;
+  border-bottom: var(--borderWidth) solid var(--borderColor);
+  border-right: var(--borderWidth) solid var(--borderColor);
+}
+
+
+
+
+
+.issue {
+  transition: box-shadow .3s; 
+  border-radius:10px;
+  background: #fff;
+  float: left;
+  margin: 1%;
+  
+}
+
+.issue:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+input[type=text]{
+  width:100%;
+  border:2px solid #aaa;
+  border-radius:4px;
+  margin:8px 0;
+  outline:none;
+  padding:8px;
+  box-sizing:border-box;
+  transition:.3s;
+}
+
+input[type=text]:focus{
+  border-color:#26a69a;
+  box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 60%;
+    margin-left: 22%;
+    cursor: pointer;
+}
+
+
+.language img
+{
+    width: 60%;
+    margin-left: 22%;
+    cursor: pointer;
+}
+
+#issueBox{
+  width:200px;
+  height: 300px;
+  overflow-y: auto;
+}
+.issueBox > input{
+  display: none;
+}
+
+.issueBox > input + img{
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.issueBox > input:checked + img{
+  border: 2px solid orange;
+}
+
+img{
+  max-width:180px;
+}
+
+/* Tire selection container */
+.checkcontainer {
+  display: block;
+  position: absolute;
+  padding-left: 0px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.checkcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 20px;
+  width: 55px;
+  opacity: 10%;
+}
+/* When the checkbox is checked, add a blue background */
+.checkcontainer input:checked ~ .checkmark {
+  background-color: #2196F3;
+  opacity: 10%;
+}
+
+/* slider */
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+.slider {
+  width: 100%; /* Full-width */
+  height: 5px;
+}
