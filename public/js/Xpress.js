@@ -277,7 +277,7 @@ function changeimg_status4(){
 }
 function changeimg_status4(){
     document.getElementById("status").src = "images/status_5.png";
-    status_line.innerText = "*********** Status: Ticket Closed ***********"
+    status_line.innerText = "******* Status: Ticket Closed ********"
 }
 function disable_fields(){
     document.getElementById("task").disabled = 'true';
