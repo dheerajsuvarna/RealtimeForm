@@ -8,6 +8,12 @@ var current_status = 0;
 var status_line = document.getElementById("status_line");
 // Connect to socket.io
 var socket = io.connect();
+var issue_comment_btn = document.getElementById('issue_comment_btn');
+var dkv_comment_btn = document.getElementById('dkv_comment_btn');
+var np_comment_btn = document.getElementById('np_comment_btn');
+var sp_comment_btn = document.getElementById('sp_comment_btn');
+var truck_comment_btn = document.getElementById('truck_comment_btn');
+var model_comment_btn = document.getElementById('model_comment_btn');
 
 // On first connect, retrieves all tasks
 socket.on('updateTask', function(todolist) {
@@ -31,6 +37,12 @@ $( document ).ready(function() {
     if(role != 'esc'){
         confirm_btn.style.display = 'none';
         workshop_btn.style.display = 'none';
+        issue_comment_btn.display = 'none';
+        dkv_comment_btn.style.display = 'none';
+        np_comment_btn.style.display = 'none';
+        sp_comment_btn.style.display = 'none';
+        truck_comment_btn.style.display = 'none';
+        model_comment_btn.style.display = 'none';
     }
 
     if(current_status >= 2){
@@ -38,6 +50,10 @@ $( document ).ready(function() {
 
     }
 });
+function issue_request_info(){
+   let issue_comment =  document.getElementById("issue_comment_input").value;
+   socket.emit('issue_comment', issue_comment);
+}
 
 function confirm(){
     document.getElementById("status").src = "images/status_2.png";
@@ -60,6 +76,7 @@ function workshop(){
 
 }
 function tracking(){
+    
     var test = null;
     document.getElementById("status").src = "images/status_4.png";
     status_line.innerText = "*** Status: Service Car is on the Way ***"
@@ -98,6 +115,14 @@ $('#task').blur(function ()
      // Empty the field task and put the focus on it
     return false; // Blocks the classic sending of the form
 });
+
+
+socket.on('issue_comment', function(data) {
+    console.log("reaching here ==> ")
+     console.log("comment ==> " + data.comment)
+     var writeComment = document.getElementById("write_comment");
+     writeComment.innerText = data.comment;
+ });
 
 socket.on('update', function(data) {
     updateTask(data.task, data.index); 
@@ -270,6 +295,7 @@ function changeimg_status2(){
 function changeimg_status3(){
     document.getElementById("status").src = "images/status_3.png";
     status_line.innerText = "*** Status: Info Forwarded to Workshop ***"
+    $("#cost_modal").modal()
 }
 function changeimg_status4(){
     document.getElementById("status").src = "images/status_4.png";

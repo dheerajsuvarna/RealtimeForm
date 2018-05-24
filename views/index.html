@@ -29,15 +29,16 @@
 
     <body>
         <div class="container" >
+                <div class="col-lg-8 col-lg-offset-2 col-xs-offset-0 col-sm-offset-0 col-xs-12 col-sm-12 ">
                 <div class="row">
-
+                   
                         <img id="status" style="width:100%;max-height:200px" src="images/status_1.png">
-    
+                    
                     </div>
                     <div class="offset-xs-4 col-centered">
                            <b><h4 id="status_line" style="margin:auto;color: green"></h4></b> 
                     </div>
-            <div class="row col-lg-8 col-xs-12 col-centered">
+            <div class="row col-lg-offset-1 col-lg-10  col-centered">
                 
                 
                 
@@ -47,35 +48,131 @@
                 <!-- The form to add task -->
                 <form action="/" method="post" id="todolistForm">
                     <div class="form-group">
-                        <label for="task">Issue</label>
-                        <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
-                    </div>
-                    <div class="form-group">
-                            <label for="task">DKV Number</label>
-                            <input type="text" value="704310-215676-50090" class="form-control input-lg" name="task" id="dkvNo" required>
+                            <label for="task">Issue</label>
+                            <div class="input-group">
+                                    <input type="text" class="form-control input-lg col-lg-8" value="Flat Tyre" name="task" id="task" required>
+                                    <span class="input-group-btn" id="issue_comment_button">
+                                            <button type="button"  onclick="issue_comment()" class="btn btn-pomegranate">
+                                                    <span class="glyphicon glyphicon-comment">
+                                                    </span> 
+                                                </button>
+                                    </span>
+                                  
+                                     
+                            </div>
+                            <p style="color: red;" id="write_comment"></p>
+                        <div id="issue_comment_div" style="display:none">
+                            <br/>
+                                <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" name="issue_comment_input" id="issue_comment_input" required>
+                                <span class="input-group-btn">
+                                        <button type="button" onclick="issue_request_info()" class="btn btn-pomegranate pull-right">
+                                                Send 
+                                            </button>
+                                </span>
                         </div>
-                    <div class="form-group">
-                        <label for="task">Number Plate</label>
-                        <input type="text" value="Y-127-508" class="form-control input-lg" name="task" id="noPlate" required>
-                        <h4 id="updatedBy"></h4>
+                        
                     </div>
-                   
+                        <div class="form-group">
+                                <label for="task">DKV Number</label>
+                                <div class="input-group">
+                                        <input type="text" value="704310-215676-50090" class="form-control input-lg" name="task" id="dkvNo" required>
+                                        <span class="input-group-btn">
+                                                <button type="button" id="dkv_comment_button" onclick="dkv_comment()" class="btn btn-pomegranate">
+                                                        <span class="glyphicon glyphicon-comment">
+                                                        </span> 
+                                                    </button>
+                                        </span>
+                                         
+                                </div>
+                            
+                            <div id="dkv_comment" style="display:none">
+                            <br/>
+                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            </div>
+                            
+                        </div>   
+                        <div class="form-group">
+                                <label for="task">Number Plate</label>
+                                <div class="input-group">
+                                        <input type="text" value="Y-127-508" class="form-control input-lg" name="task" id="noPlate" required>
+                                        <span class="input-group-btn">
+                                                <button type="button" id="np_comment_button" onclick="np_comment()" class="btn btn-pomegranate">
+                                                        <span class="glyphicon glyphicon-comment">
+                                                        </span> 
+                                                    </button>
+                                        </span>
+                                         
+                                </div>
+                            
+                            <div id="np_comment" style="display:none">
+                            <br/>
+                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            </div>
+                            
+                        </div>  
+                        <div class="form-group">
+                                <label for="task">Spare Part</label>
+                                <div class="input-group">
+                                        <input type="text" value="Tyre Brand: Michelin / Diameter : 22.5" class="form-control input-lg" name="task" id="diameter" required>
+                                        <span class="input-group-btn">
+                                                <button type="button" id="sp_comment_button" onclick="sp_comment()" class="btn btn-pomegranate">
+                                                        <span class="glyphicon glyphicon-comment">
+                                                        </span> 
+                                                    </button>
+                                        </span>
+                                         
+                                </div>
+                            
+                            <div id="sp_comment" style="display:none">
+                            <br/>
+                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            </div>
+                            
+                        </div> 
+                        <div class="form-group">
+                                <label for="task">Truck</label>
+                                <div class="input-group">
+                                        <input type="text" value="MAN" class="form-control input-lg" name="task" id="truckModel" required>
+                                        <span class="input-group-btn">
+                                                <button type="button" id="truck_comment_button" onclick="truck_comment()" class="btn btn-pomegranate">
+                                                        <span class="glyphicon glyphicon-comment">
+                                                        </span> 
+                                                    </button>
+                                        </span>
+                                         
+                                </div>
+                            
+                            <div id="truck_comment" style="display:none">
+                            <br/>
+                                    <input type="text" onclick="truck_comment()" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                                <label for="task">Model</label>
+                                <div class="input-group">
+                                        <input type="text" value="LE / L2000" class="form-control input-lg" name="task" id="tyreBrand" required>
+                                        <span class="input-group-btn">
+                                                <button type="button" id="model_comment_button" onclick="model_comment()" class="btn btn-pomegranate">
+                                                        <span class="glyphicon glyphicon-comment">
+                                                        </span> 
+                                                    </button>
+                                        </span>
+                                         
+                                </div>
+                            
+                            <div id="model_comment"  style="display:none">
+                            <br/>
+                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            </div>
+                            
+                        </div>
                    <!-- <div class="form-group">
                         <label for="task">Destination</label>
                         <input type="text" class="form-control input-lg" name="task" id="dest" required>
                     </div> -->
-                    <div class="form-group">
-                            <label for="task">Spare Part</label>
-                            <input type="text" value="Tyre Brand: Michelin / Diameter : 22.5" class="form-control input-lg" name="task" id="diameter" required>
-                        </div>
-                    <div class="form-group">
-                        <label for="task">Truck</label>
-                        <input type="text" value="MAN" class="form-control input-lg" name="task" id="truckModel" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="task">Model</label>
-                        <input type="text" value="LE / L2000" class="form-control input-lg" name="task" id="tyreBrand" required>
-                    </div>
+
+
                     
                    <!-- <button  type="submit" class="btn btn-primary btn-lg" id="sendTask">Submit</button>-->
                     <a class="btn btn-primary btn-lg" id="confirm" onclick="confirm()">Confirm</a>
@@ -86,12 +183,81 @@
                <!-- <a href="#" class="float">
                         <i class="fa fa-plus my-float"></i>
                         </a>-->
+                        <div class="modal fade" id="cost_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                      <h4 class="modal-title">Price Estimate</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Towing Charges : 200 - 250 Euros</p>
+                                      <p>Workshop Charge : 100 -150 Euros</p>
+                                      <p>Service Charge : 150-200 Euros</p>
+                                      <p>Total : 450 - 600 Euros</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>
+                                      
+                                    </div>
+                                  </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                              </div><!-- /.modal -->
             </div>
         </div>
+
+
+    </div>
         <!-- Call JS files -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="js/Xpress.js"></script>
+        <script>
+        function issue_comment(){
+            if(document.getElementById("issue_comment_div").style.display == "block"){
+                document.getElementById("issue_comment_div").style.display = "none" 
+            }else{
+                document.getElementById("issue_comment_div").style.display = "block"
+            }
+        }
+        function np_comment(){
+            if(document.getElementById("np_comment").style.display == "block"){
+                document.getElementById("np_comment").style.display = "none" 
+            }else{
+                document.getElementById("np_comment").style.display = "block"
+            }
+        }
+        function sp_comment(){
+            if(document.getElementById("sp_comment").style.display == "block"){
+                document.getElementById("sp_comment").style.display = "none" 
+            }else{
+                document.getElementById("sp_comment").style.display = "block"
+            }
+        }
+        function truck_comment(){
+            if(document.getElementById("truck_comment").style.display == "block"){
+                document.getElementById("truck_comment").style.display = "none" 
+            }else{
+                document.getElementById("truck_comment").style.display = "block"
+            }
+        }
+        function model_comment(){
+            if(document.getElementById("model_comment").style.display == "block"){
+                document.getElementById("model_comment").style.display = "none" 
+            }else{
+                document.getElementById("model_comment").style.display = "block"
+            }
+        }
+        function dkv_comment(){
+            if(document.getElementById("dkv_comment").style.display == "block"){
+                document.getElementById("dkv_comment").style.display = "none" 
+            }else{
+                document.getElementById("dkv_comment").style.display = "block"
+            }
+        }
+        
+        </script>
     </body>
 
 </html>

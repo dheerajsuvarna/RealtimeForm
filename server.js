@@ -31,10 +31,20 @@ application.use(express.static('public'))
     response.sendFile(__dirname + '/views/index.html');
 })
 
+.get('/welcome', function(request, response)
+{
+    response.sendFile(__dirname + '/views/welcome.html');
+})
+
+.get('/ticket/:id', function(request, response)
+{
+    response.sendFile(__dirname + '/views/ticket.html');
+})
+
 // Redirects to todolist homepage if wrong page is called
 .use(function(request, response, next)
 {
-    response.redirect('/xpress');
+    response.redirect('/welcome');
 });
 
 
@@ -114,6 +124,13 @@ socket.on('status_4', function(test)
 socket.on('status_5', function(test)
 {
    socket.broadcast.emit('status_5');
+});
+
+socket.on('issue_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('issue_comment', {comment:comment});
 });
 
 
