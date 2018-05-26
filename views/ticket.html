@@ -1,533 +1,169 @@
 <!doctype html>
 <html lang="" xmlns:width="http://www.w3.org/1999/xhtml">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DKV XPRESS</title>
+</head>
+<!-- <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">  -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-green.min.css" />
+<link rel="stylesheet" href="/css/fab.css" />
+<link rel="stylesheet" href="/css/rotate.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/issue_grid.css" />
 
-    <!-- Disable tap highlight on IE -->
-    <meta name="msapplication-tap-highlight" content="no">
+<body>
 
-    <!-- Web Application Manifest -->
-    <link rel="stylesheet" href="css/ticket_style.css">
-    <link rel="stylesheet" href="css/location.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/check.css">
-    <link rel="stylesheet" href="css/leftFloat.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
- <!--Import Google Icon Font-->
- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.8/jquery.lazy.js"></script>
- <!-- jQuery -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
- <!-- Materializecss compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
- <!-- jQueryValidation Plugin (optional) -->
- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Web Starter Kit">
-    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-pink.min.css" />
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
-
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
-
-    <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#2F3BA2">
-
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
-    <!-- Material Design icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
-    <!-- Material Design Lite page styles:
-    You can choose other color schemes from the CDN, more info here http://www.getmdl.io/customize/index.html
-    Format: material.color1-color2.min.css, some examples:
-    material.red-teal.min.css
-    material.blue-orange.min.css
-    material.purple-indigo.min.css
-    -->
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-
-    <!-- Your styles -->
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Xpress</span>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Issue</a>
+                <a href="#scroll-tab-2" class="mdl-layout__tab">Truck Model</a>
+                <a href="#scroll-tab-3" class="mdl-layout__tab">Location</a>
+                <a href="#scroll-tab-4" class="mdl-layout__tab">Tire Position</a>
+                <a href="#scroll-tab-5" class="mdl-layout__tab">Tire Size</a>
+                <a href="#scroll-tab-6" class="mdl-layout__tab">Tire Brand</a>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Xpress Options</span>
         </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>DKV XPRESS</h3>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="language">
-                <h4 style="left: 0%;margin-right:2%;">DKV XPRESS</h4>
-        <a id="languageButton">
-                <img id="languageImage" style="position: fixed;top: 6%; right: 0%;width:12%;margin-right:2%;" src="images/Language/English.svg"/>
-        </a>
-          
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-        
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow">
-              <div class="container" id="formContainer">
-                  
-                  
-                  
-                  <form id="regForm" class="mdl-layout__content" style="background-color:#F5F5F5" autocomplete="off">
-
-
-                      <div class="tab lazy">
-                          <div class="card radius shadowDepth2 mdl-shadow--4dp">
-                              <div class="card__image border-tlr-radius">
-                                  <img src="images/placeholders/issue.png" alt="image" class="border-tlr-radius">
-                                  
-                              </div>
-                             
-                              <div class="card__content card__padding">
-                                   <b> <p style="display:block;font-style: bold;font-size: 29px;text-align: center;" data-i18n="language.issue"></p></b>
-                            <div class="row" >
-                                <div class="issue">
-                                        <label class="issueBox">
-                                        <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="issue(1)">
-                                        <img src="images/issues/flatTyre_issue.jpeg" alt=""/>
-                                    </div>
-                                <div class="issue">
-                                        <label class="issueBox">
-                                        <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="issue(1)">
-                                        <img src="images/issues/battery_issue.jpeg" alt=""/>
-                    
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">               
+                <div class="page-content">
+                        <div class="search-card mdl-card mdl-shadow--2dp" style="display: none" id="search_bar">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                  <i class="material-icons">search</i>
+                                  <input class="mdl-textfield__input" type="text" id="sample1" />
                                 </div>
-                                <div class="issue">
-                                        <label class="issueBox">
-                                        <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="issue(1)">
-                                        <img src="images/issues/trailer_issue.jpeg" alt=""/>
-                                </div>
-                                  
-                                  
-                              </div>
-                              
-                              <div class="autocomplete" style="width:300px;">
-                              <p><input id="myInput" type="text" name="myProblem" data-i18n-placeholder="language.describe"></p>
-                              </div>
-                              </div>
-                          </div>
-                      </div>
-
-                     <!-- Photo -->
-                      <div class="tab lazy">
-                          <div class="card radius shadowDepth1">
-                              <div class="card__image border-tlr-radius">
-                                  <img src="images/placeholders/image_scan_placeholder.jpg" alt="image" class="border-tlr-radius">
-                              </div>
-
-                              <div class="card__content card__padding">
-                                    <div class="image-upload">
-                                            <label for="inputImage">
-                                                <img id="imageUploadPreview" src="images/camera/camera.png"/>
-                                            </label>
-                                        
-                                            <input id="inputImage" type="file"  onchange="readURL(this);" accept="image/*;capture=camera">
-                                        </div> 
-                                       
-                                               
-                                            
-                                              
-                                  <p style="display:block;font-size: 29px;text-align: center;" id="imageScanText" data-i18n="language.photo"></p>
-                                  <!-- Scan by clicking 'next' instead
-                                  <button id="scanImage">Scan</button>
-                                  -->
-                              </div>
-                          </div>
-                      </div>
-
-                     <!-- Analyzed Photo -->
-                    <div class="tab">
-                            <div class="card radius shadowDepth1">
-                                    <div class="card__image border-tlr-radius">
-                                        <img src="images/placeholders/scannedTruckPlaceHolder.jpg" alt="image" class="border-tlr-radius">
-                                    </div>
-                    
-                                    <div class="card__content card__padding">
-                                        <div class="card__share">
-                                            <div class="card__social">  
-                                                
-                                            </div>
-                    
-                                            <a id="share" class="share-toggle share-icon" href="#">
-                                            </a>
-                                        </div>
-                    
-                                        <div class="card__meta">
-                                           
-                                        </div>
-                    
-                                        <article class="card__article">
-                                            <p style="display:block;font-size: 15px;" data-i18n="language.licensePlate"></p>
-                                            <p  style="display:block;font-size: 15px;" data-i18n="language.truckMake"></p>
-                                            <p style="display:block;font-size: 15px;" data-i18n="language.truckModel"></p>
-                                            <p style="display:block;font-size: 15px;" data-i18n="language.NumberOfAxis"></p>
-                                        </article>
-                                    </div>
-                    <!-- Instead: Confirm by clicking 'next'
-                                    <div class="card__action">
-                                        
-                                        <div class="card__author">
-                                            <div class="card__author-content">
-                                                <a href="#" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Confirm</a>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                </div>
-                    </div>
-
-                      <!-- Location -->
-                      <div class="tab">
-                        <div class="card radius shadowDepth1">
-                            
-
-                            <div class="card__content card__padding">
-                                <div id="locationDiv">
-                                      <div class="image-upload">
-                                              <img onclick="test()" src="images/location/location.png"/>
-                                      </div> 
-                                  <p style="display:block;font-size: 29px;text-align: center;" data-i18n="language.location"></p>
-                                </div>
-                                <div style="display:none;" id="mapDiv">
-                                      <div class="image-upload">
-                                              <img onclick="test()" src="images/placeholders/location_fake.jpg"/>
-                                      </div> 
-                                <!--   <p style="display:block;font-size: 29px;text-align: center;" data-i18n="language.confirmLocation"></p> -->
-                                </div>
-                              </div>
-                                </div>
-
-                               
                         </div>
+                    <div class="demo-grid-3 mdl-grid">
+                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                            <img style="width: 100%; height: 100%;display: block;" src="/images/placeholders/TruckMasqueBG.svg"
+                                alt="image" class="border-tlr-radius">
+                        </div>
+                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                            <img style="width: 100%; height: 100%;display: block;" src="/images/placeholders/TruckMasqueBG.svg"
+                                alt="image" class="border-tlr-radius">
+                        </div>
+                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone"></div>
                     </div>
-
-                  <!-- Ticket created -->
-                  <div class="tab">
-                          <div class="card radius shadowDepth1">                       
-                                  <div class="card__content card__padding">
-                                    <div class="image-upload">
-                                        <img  src="images/placeholders/tick.png"/>
-                                </div>
-                                       <p style="display:block;font-size: 29px;text-align: center;" data-i18n="language.created"></p>
-                                       <p style="display:block;font-size: 15px;" data-i18n="language.AdditionalInfo1"></p>
-                                       <p style="display:block;font-size: 15px;" data-i18n="language.AdditionalInfo2"></p>
-                                      </div>
-                                    </div>
-                                      </div>
-
-                  <!-- Tire Brands -->
-                
-                  <div class="tab">
-                          <div class="card radius shadowDepth1">
-                              <div class="card__content card__padding">
-                                  <p style="display:block;font-size: 29px;text-align: center;" data-i18n="language.tyreBrand"></p>
-                                  <div class="row" style="width:100%">
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Bridgestone.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Continental.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" style="width:100%" src="images/tireManufacturer/Dunlop.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Falken%20Tire.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Firestone.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Goodyear.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img src="images/tireManufacturer/Hankook.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%"src="images/tireManufacturer/Michelin.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Pirelli.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Semperit.svg" alt=""/>
-                                      
-                                                  </div>
-                                                  <div class="issue">
-                                                          <label class="issueBox">
-                                                          <input type="radio" name="issueBox" class="mdl-shadow--2dp" src="images/issues/flatTyre_issue.jpeg" onclick="brand(1)">
-                                                          <img style="width:100%" src="images/tireManufacturer/Uniroyal.svg" alt=""/>
-                                      
-                                                  </div>
-                                              </div>
-                                      </div>
-                                    </div>
-                      
-                          
-                      
-                  </div>
-             
-                  <!-- Tire Sizes -->
-              
-                  <div class="tab">
-                    <div class="card radius shadowDepth1">
-                            <div class="card__image border-tlr-radius" style="background-color:white;" >
-                                <div class="tirecontainer">
-                                <img src="images/Tire%20Size/Tire%20Size%20Definition.png" style="width: 400px">
-                                
-                                <div class="tire_diameter"><span id="diameter_value"></span></div>
-                                <div class="tire_radius"><span id="radius_value"></span></div>
-                                <div class="tire_width"><span id="width_value"></span></div>
-                                </div>
-                            </div>
-                            <div class="card__content card__padding">
-                                        Diameter
-                                        <div class="slidecontainer" >
-                                            <input type="range" min="245" max="495" value="355" step="5" class="slider" id="diameter">
-                                        </div>
-                                        Radius
-                                        <div class="slidecontainer">
-                                            <input type="range" min="45" max="80" value="60" step="5" class="slider" id="radius">
-                                        </div>
-                                        Width
-                                        <div class="slidecontainer">
-                                            <input type="range" min="15" max="24" value="19" step="0.5" class="slider" id="width">
-                                        </div>
-                              </div>
-                    </div>
-            </div>
-                 
-
-                   <!-- Choose Flat Tyre 
-                  <div class="tab">
-                      <div class="card radius shadowDepth1">
-                          <div class="card__image border-tlr-radius">
-                          </div>
-    
-                          <div class="card__content card__padding">
-    
-    
-                              <label class="checkcontainer" style="width: 100%">
-                                  <img src="images/Axis/3axis.png" style="width: 80%"/>
-                                  <input type="checkbox" checked="checked">
-                                  <span class="checkmark"></span>
-                              </label>
-                              <p style="display:block;font-size: 15px;" data-i18n="language.selectTire"></p>
-    
-                          </div>
-                      </div>
-                  </div>-->
-                  <!-- Thank you -->
-                  <div class="tab">
-                    <div class="card radius shadowDepth1">
-                            
-
-                            <div class="card__content card__padding">
-                                    
-                                 <p style="display:block;font-size: 29px;text-align: center;" data-i18n="language.thankyou"></p>
-                                 <p style="display:block;font-size: 15px;" data-i18n="language.sharedDoc"></p>
-                                 <div class="image-upload">
-                                    <img  src="images/placeholders/checkbox.png"/>
-                            </div>
-                                </div>
-                              </div>
-                     </div>
-                  <!-- Truck Tons -->
-                  <!--
-                      <div class="tab">
-                          Tons
-                          <p>
-                          <button class="btn">3.5</button>
-                          <button class="btn">7.5</button>
-                          <button class="btn">12-20</button>
-                          <button class="btn">20-40</button>
-                          </p>
-                      </div>
-                  -->
-                      
-                      <!-- Circles which indicates the steps of the form: -->
-                    <!--
-                  <div style="text-align:center;margin-top:40px;">
-                      <span class="step"></span>
-                      <span class="step"></span>
-                      <span class="step"></span>
-                      <span class="step"></span>
-                     
-                  </div>-->
-              </form>
-              <div style="overflow:auto;display: none;">
-                  <div style="float:right; display: none;">
-                      <button style="display:none" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button" style="margin-bottom:2%" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                      <button style="display:none" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button" style="margin-bottom:2%" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                  </div>
-              </div>
-              </div>
-        </section>
-          
-          <div style="margin: 40% auto;" id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <div  style="margin: auto;" class="row">
-
-                        <img  onclick="language('en')" style="width:20%;margin-right:2%;margin-top:30%" src="images/Language/English.svg"/>
-                        <img  onclick="language('de')" style="width:20%;margin-right:2%;margin-top:30%" src="images/Language/germany.png"/>
-                        <img  onclick="language('it')" style="width:20%;margin-right:2%;margin-top:30%" src="images/Language/Italy.svg"/>
-                  </div>
-                  
                 </div>
-              
-              </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="scroll-tab-2">
+                <div class="page-content">
+                    <div>
+                        <img style="max-width: 100%; max-height: 100%;display: block;" src="/images/placeholders/TruckMasqueBG.svg" alt="image" class="border-tlr-radius">
+                    </div>
+
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="scroll-tab-3">
+                <div class="page-content">
+                    <img style="width: 100%; max-height: 100%;display: block;" src="/images/placeholders/MapIcon.svg" alt="image" class="border-tlr-radius">
+                </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-4">
+        <div class="page-content">
+                
+                <img style="width: 100%; max-height: 100%;display: block;" src="/images/placeholders/tirePosition.svg" alt="image" class="border-tlr-radius">
+                    
         </div>
-        
-        <!-- <footer class="mdl-mega-footer">
-          
-          <div class="mdl-mega-footer--bottom-section">
-            <div class="mdl-logo">
-              More Information
-            </div>
-            <ul class="mdl-mega-footer--link-list">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy and Terms</a></li>
-            </ul>
-          </div>
-        </footer> -->
-      </main>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-5">
+        <div class="page-content">
+            <!-- Your content goes here -->
+        </div>
+    </section>
+    <section class="mdl-layout__tab-panel" id="scroll-tab-6">
+        <div class="page-content">
+                <div class="demo-grid-3 mdl-grid">
+                        <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                            <img style="display: block;" src="/images/TireBrands/bridgestone.svg"
+                                alt="image" class="border-tlr-radius">
+                        </div>
+                        <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                            <img style="display: block;" src="/images/TireBrands/Continental.svg"
+                                alt="image" class="border-tlr-radius">
+                        </div>
+                        <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <img style="display: block;" src="/images/TireBrands/Dunlop.svg"
+                                    alt="image" class="border-tlr-radius">
+                            </div>
+                            <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                    <img style="display: block;" src="/images/TireBrands/FalkenTire.svg"
+                                        alt="image" class="border-tlr-radius">
+                                </div>
+                                <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                                    <img style="display: block;" src="/images/TireBrands/Firestone.svg"
+                                        alt="image" class="border-tlr-radius">
+                                </div>
+                                <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                        <img style="display: block;" src="/images/TireBrands/Goodyear.svg"
+                                            alt="image" class="border-tlr-radius">
+                                    </div>
+                                    <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                                        <img style="display: block;" src="/images/TireBrands/Pirelli.svg"
+                                            alt="image" class="border-tlr-radius">
+                                    </div>
+                                    <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                                            <img style="display: block;" src="/images/TireBrands/Michelin.svg"
+                                                alt="image" class="border-tlr-radius">
+                                        </div>
+                                        <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                                <img style="display: block;" src="/images/TireBrands/Semperit.svg"
+                                                    alt="image" class="border-tlr-radius">
+                                            </div>
+                                            <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                                                <img style="display: block;" src="/images/TireBrands/Uniroyal.svg"
+                                                    alt="image" class="border-tlr-radius">
+                                            </div>
+                                            <div onclick="switchTab(1)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+                                                    <img style="display: block;" src="/images/TireBrands/Vredestein.svg"
+                                                        alt="image" class="border-tlr-radius">
+                                                </div>
+                       
+                    </div>
+        </div>
+    </section>
+    </main>
     </div>
-    <!-- <div class="fixed-action-btn" style="margin-bottom:5%">
-        <a class="btn-floating btn-large orange">
-          <i class="large material-icons">mode_edit</i>
-        </a>
-         <ul>
-          <li><a class="btn-floating red"><i class="material-icons">keyboard_arrow_right</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
-      </div> -->
-    <div class="fixed-action-btn" id="nextDiv">
-        <a class="btn-floating btn-large orange">
-          <i class="large material-icons" id="nextBtn" onclick="nextPrev(1)">keyboard_arrow_right</i>
-        </a>
-        <!-- <ul>
-          <li><a class="btn-floating red"><i class="material-icons">keyboard_arrow_right</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul> -->
-      </div>
 
-      <div class="fabs" id="prevDiv">
-        <a class="btn-floating btn-large orange" id="prime">
+    <!-- Colored FAB button with ripple-->
+    <div class="mdl-sheet__container">
+        <button onclick="revealSearch()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-sheet">
+            <i class='material-icons icon-material-search'>search</i>
+        </button>
+    </div>
 
-            <i class="large material-icons" id="prevBtn" onclick="nextPrev(-1)">keyboard_arrow_left</i>
-        </a>
-      </div>
-      
-      
-    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-    <!-- build:js scripts/main.min.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script>
-//      var image = document.getElementById("inputImage").value;
-//      var data = [];
-//      $("#scanImage").on('click',(function(e) {
-//     e.preventDefault();
-//     console.log("Hello ITs reaching here")
-//     console.log(image)
-//     data.push(image)
-//     $.ajax({
-//         url: "https://api.openalpr.com/v2/recognize_bytes?secret_key=sk_29cc02e30faef9a239f781db&recognize_vehicle=1&country=eu&return_image=0&topn=10",      // Url to which the request is send
-//         type: "POST",                   // Type of request to be send, called as method
-//         data:  data,
-//         contentType: false,             // The content type used when sending data to the server. Default is: "application/x-www-form-urlencoded"
-//         cache: false,                   // To unable request pages to be cached
-//         processData:false,              // To send DOMDocument or non processed data file it is set to false (i.e. data should not be in the form of string)
-//         success: function(data)         // A function to be called if request succeeds
-//         {
+   
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="/js/fab.js"></script>
+        <script src="/js/switchTab.js"></script>
+        <script src="/js/rotate.js"></script>
+    
+        
+</body>
+<script>
+    function revealSearch(){
+        if(document.getElementById("search_bar").style.display == 'none'){
+            document.getElementById("search_bar").style.display = 'block'
+        }else{
+            document.getElementById("search_bar").style.display = 'none'
+        }
+       
 
-//             console.log("Got Back Data " + JSON.stringify(data));
-//         }
-//     });
-// }));
- 
-     </script>
-     <script>
-     function test(){
-        //document.getElementById("locationDiv").style.display = "none";
-        document.getElementById("mapDiv").style.display = "block";
-     }
-     </script>
-     <script  src="js/language.js"></script>
-     <script  src="js/tab.js"></script>
-     <script  src="js/card.js"></script>
-     <script  src="js/preview.js"></script>
-     <script  src="js/modal.js"></script>
-     <script  src="js/autocomplete.js"></script>
-  </body>
+    }
+</script>
+
 </html>

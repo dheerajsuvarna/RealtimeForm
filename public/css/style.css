@@ -1,0 +1,31 @@
+.search-card {
+    top: 5%;
+    min-height: 0;
+    margin: auto;
+    width: 95%;
+  }
+  @media screen and (min-width: 768px) {
+    .search-card {
+      width: 650px;
+    }
+  }
+  .search-card .mdl-textfield {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+  }
+  .search-card .mdl-textfield__input {
+
+    border: 0;
+    
+    
+  }
+  .search-card .material-icons {
+    position: absolute;
+  }
+  .search-card .material-icons + .mdl-textfield__input {
+    padding-left: 29px;
+    box-sizing: border-box;
+    
+  }
+  
