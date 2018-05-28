@@ -26,6 +26,7 @@ socket.on('updateTask', function(todolist) {
 
 
 $( document ).ready(function() {
+    //getLocation();
     var role = getAllUrlParams(window.location.href).role;
    // var myHeader = document.getElementById("role");
     //myHeader.innerText = "Role : " + role;

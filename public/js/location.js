@@ -42,7 +42,6 @@ function getLocation(){
         var lat = pos.coords.latitude;
         // and presto, we have the device's location!
         msg = 'You appear to be at longitude: ' + lng + ' and latitude: ' + lat  + '<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x300&maptype=roadmap&markers=color:red%7Clabel:A%7C' + lat + ',' + lng+ '&sensor=false">';
-        alert(msg)
         outputResult(msg); // output message
         $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-success'); // change button style
       }
