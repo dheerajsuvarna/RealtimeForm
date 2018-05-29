@@ -27,6 +27,7 @@ socket.on('updateTask', function(todolist) {
 
 $( document ).ready(function() {
     //getLocation();
+    
     var role = getAllUrlParams(window.location.href).role;
    // var myHeader = document.getElementById("role");
     //myHeader.innerText = "Role : " + role;
@@ -51,14 +52,62 @@ $( document ).ready(function() {
 
     }
 });
-function issue_request_info(){
-   let issue_comment =  document.getElementById("issue_comment_input").value;
-   var writeComment = document.getElementById("write_comment");
-   writeComment.innerText  += "\n"+ issue_comment;
-   socket.emit('issue_comment', issue_comment);
-   issue_comment.value = "";
+function request_info(){
+   let comment =  document.getElementById("chat_comment_input").value;
+   let writeComment = document.getElementById("chat_commetn_write");
+   writeComment.innerText  += "\n"+ comment;
+   socket.emit('chat_comment', comment);
+   comment.value = "";
   
 }
+function issue_request_info(){
+    let comment =  document.getElementById("issue_comment_input").value;
+    let writeComment = document.getElementById("write_comment");
+    writeComment.innerText  += "\n"+ comment;
+    socket.emit('issue_comment', comment);
+    comment.value = "";
+   
+ }
+function dkv_request_info(){
+    let comment =  document.getElementById("dkv_comment_input").value;
+    let writeComment = document.getElementById("dkv_comment_write");
+    writeComment.innerText  += "\n"+ comment;
+    socket.emit('dkv_comment', comment);
+    comment.value = "";
+   
+ }
+ function np_request_info(){
+    let comment =  document.getElementById("np_comment_input").value;
+    let writeComment = document.getElementById("np_comment_write");
+    writeComment.innerText  += "\n"+ comment;
+    socket.emit('np_comment', comment);
+    comment.value = "";
+   
+ }
+ function sp_request_info(){
+    let comment =  document.getElementById("sp_comment_input").value;
+    let writeComment = document.getElementById("sp_comment_write");
+    writeComment.innerText  += "\n"+ comment;
+    socket.emit('sp_comment', comment);
+    comment.value = "";
+   
+ }
+ function truck_request_info(){
+    let comment =  document.getElementById("truck_comment_input").value;
+    let writeComment = document.getElementById("truck_comment_write");
+    writeComment.innerText  += "\n"+ comment;
+    socket.emit('truck_comment', comment);
+    comment.value = "";
+   
+ }
+ function model_request_info(){
+    let comment =  document.getElementById("model_comment_input").value;
+    let writeComment = document.getElementById("model_comment_write");
+    writeComment.innerText  += "\n"+ comment;
+    socket.emit('model_comment', comment);
+    comment.value = "";
+   
+ }
 
 function confirm(){
     document.getElementById("status").src = "images/status_2.png";
@@ -123,10 +172,34 @@ $('#task').blur(function ()
 
 
 socket.on('issue_comment', function(data) {
-    console.log("reaching here ==> ")
      var writeComment = document.getElementById("write_comment");
      writeComment.innerText  += "\n"+ data.comment;
  });
+
+ socket.on('dkv_comment', function(data) {
+    var dkv_comment_write = document.getElementById("dkv_comment_write");
+    dkv_comment_write.innerText  += "\n"+ data.comment;
+});
+socket.on('np_comment', function(data) {
+    var np_comment_write = document.getElementById("np_comment_write");
+    np_comment_write.innerText  += "\n"+ data.comment;
+});
+socket.on('sp_comment', function(data) {
+    var sp_comment_write = document.getElementById("sp_comment_write");
+    sp_comment_write.innerText  += "\n"+ data.comment;
+});
+socket.on('truck_comment', function(data) {
+    var truck_comment_write = document.getElementById("truck_comment_write");
+    truck_comment_write.innerText  += "\n"+ data.comment;
+});
+socket.on('make_comment', function(data) {
+    var make_comment_write = document.getElementById("make_comment_write");
+    make_comment_write.innerText  += "\n"+ data.comment;
+});
+socket.on('chat_comment', function(data) {
+    var chat_comment_write = document.getElementById("chat_commetn_write");
+    chat_comment_write.innerText  += "\n"+ data.comment;
+});
 
 socket.on('update', function(data) {
     updateTask(data.task, data.index); 

@@ -84,10 +84,15 @@
                                         </span>
                                          
                                 </div>
-                            
+                                <p style="color: red;" id="dkv_comment_write"></p>
                             <div id="dkv_comment" style="display:none">
                             <br/>
-                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" id="dkv_comment_input" required>
+                            <span class="input-group-btn">
+                                    <button type="button" onclick="dkv_request_info(role)" class="btn btn-pomegranate pull-right">
+                                            Send 
+                                        </button>
+                            </span>
                             </div>
                             
                         </div>   
@@ -103,10 +108,15 @@
                                         </span>
                                          
                                 </div>
-                            
+                                <p style="color: red;" id="np_comment_write"></p>
                             <div id="np_comment" style="display:none">
                             <br/>
-                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" id="np_comment_input" required>
+                            <span class="input-group-btn">
+                                    <button type="button" onclick="np_request_info(role)" class="btn btn-pomegranate pull-right">
+                                            Send 
+                                        </button>
+                            </span>
                             </div>
                             
                         </div>  
@@ -122,10 +132,15 @@
                                         </span>
                                          
                                 </div>
-                            
+                                <p style="color: red;" id="sp_comment_write"></p>
                             <div id="sp_comment" style="display:none">
                             <br/>
-                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" id="sp_comment_input" required>
+                            <span class="input-group-btn">
+                                    <button type="button" onclick="sp_request_info(role)" class="btn btn-pomegranate pull-right">
+                                            Send 
+                                        </button>
+                            </span>
                             </div>
                             
                         </div> 
@@ -141,10 +156,15 @@
                                         </span>
                                          
                                 </div>
-                            
+                                <p style="color: red;" id="truck_comment_write"></p>
                             <div id="truck_comment" style="display:none">
                             <br/>
-                                    <input type="text" onclick="truck_comment()" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" id="truck_comment_input" required>
+                            <span class="input-group-btn">
+                                    <button type="button" onclick="truck_request_info(role)" class="btn btn-pomegranate pull-right">
+                                            Send 
+                                        </button>
+                            </span>
                             </div>
                             
                         </div>
@@ -160,10 +180,32 @@
                                         </span>
                                          
                                 </div>
-                            
+                                <p style="color: red;" id="model_comment_write"></p>
                             <div id="model_comment"  style="display:none">
                             <br/>
-                                    <input type="text" class="form-control input-lg" value="Flat Tyre" name="task" id="task" required>
+                            <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" id="model_comment_input" required>
+                            <span class="input-group-btn">
+                                    <button type="button" onclick="model_request_info(role)" class="btn btn-pomegranate pull-right">
+                                            Send 
+                                        </button>
+                            </span>
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                                <label for="task">Request Additional Information</label>
+                                
+                            <div id="chat_comment">
+                            <br/>
+                            <p style="color: red;" id="chat_commetn_write"></p>
+                            <input type="text" class="form-control input-lg col-lg-8" placeholder="Request more information" id="chat_comment_input" required>
+                            <span class="input-group-btn">
+                                    <button type="button" onclick="request_info(role)" class="btn btn-pomegranate pull-right">
+                                            Send 
+                                        </button>
+                            </span>
+                            
                             </div>
                             
                         </div>

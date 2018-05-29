@@ -30,3 +30,20 @@
         }
 }
 
+function tireSelect(brand){
+    
+    let img = document.getElementById("estimateImg")
+    if(brand==1){
+        console.log("Bridgestone")
+        img.src = "/images/EstimationBridgestone.svg"
+        switchTab(7)
+    }else if(brand==2){
+        console.log("dunlop")
+        img.src = "/images/EstimationDunlop.svg"
+        switchTab(7)
+    }else {
+        console.log("continental")
+        img.src = "/images/EstimationContinental.svg"
+        switchTab(7)
+    }
+}

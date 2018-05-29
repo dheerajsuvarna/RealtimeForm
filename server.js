@@ -140,6 +140,42 @@ socket.on('issue_comment', function(comment)
     console.log("comment ==>" + comment)
    socket.broadcast.emit('issue_comment', {comment:comment});
 });
+socket.on('dkv_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('dkv_comment', {comment:comment});
+});
+socket.on('np_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('np_comment', {comment:comment});
+});
+socket.on('sp_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('sp_comment', {comment:comment});
+});
+socket.on('truck_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('truck_comment', {comment:comment});
+});
+socket.on('model_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('model_comment', {comment:comment});
+});
+socket.on('chat_comment', function(comment)
+{
+    comment = ent.encode(comment);
+    console.log("comment ==>" + comment)
+   socket.broadcast.emit('chat_comment', {comment:comment});
+});
 
 
 
