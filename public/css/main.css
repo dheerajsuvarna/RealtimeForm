@@ -186,6 +186,7 @@ img{
 /* slider */
 .slidecontainer {
   width: 100%; /* Width of the outside container */
+  margin: 10%
 }
 
 .slider {
@@ -194,6 +195,34 @@ img{
 }
 
 #map {
-  height: 70%;
+  height: 100%;
   width:80%;
+}
+
+.tire_diameter {
+  position: absolute;
+  top: 51%;
+  left: 25%;
+  transform: translate( -50%, -50% ) rotate(345deg);
+}
+
+.tire_radius {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+}
+
+.tire_width{
+  position: absolute;
+  top: 51%;
+  left: 77%;
+  transform: translate( -50%, -50% ) rotate(15deg);
+}
+
+.tirecontainer {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  color: white;
 }

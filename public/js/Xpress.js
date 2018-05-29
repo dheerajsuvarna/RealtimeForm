@@ -53,7 +53,11 @@ $( document ).ready(function() {
 });
 function issue_request_info(){
    let issue_comment =  document.getElementById("issue_comment_input").value;
+   var writeComment = document.getElementById("write_comment");
+   writeComment.innerText  += "\n"+ issue_comment;
    socket.emit('issue_comment', issue_comment);
+   issue_comment.value = "";
+  
 }
 
 function confirm(){
@@ -120,9 +124,8 @@ $('#task').blur(function ()
 
 socket.on('issue_comment', function(data) {
     console.log("reaching here ==> ")
-     console.log("comment ==> " + data.comment)
      var writeComment = document.getElementById("write_comment");
-     writeComment.innerText = data.comment;
+     writeComment.innerText  += "\n"+ data.comment;
  });
 
 socket.on('update', function(data) {

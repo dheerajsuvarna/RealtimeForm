@@ -1,0 +1,41 @@
+/* Tire selection container */
+.checkcontainer {
+    width: 500px;
+    display: block;
+    position: absolute;
+    padding-left: 0px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* Hide the browser's default checkbox */
+  .checkcontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  
+  }
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 30px;
+    width: 10px;
+    opacity: 10%;
+  }
+  /* When the checkbox is checked, add a blue background */
+  .checkcontainer input:checked ~ .checkmark {
+    background-color: rgba(115, 114, 117, 0.6);
+    outline-style: solid;
+    outline-color: rgb(243, 128, 33);
+    opacity: 10%;
+  }
+  .checkcontainer input:not(:checked) ~ .checkmark {
+    background-color: rgba(115, 114, 117, 0.6);
+    opacity: 10%;
+  }
