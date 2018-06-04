@@ -29,7 +29,7 @@ function switchTab(n){
       
         
         camera_action.style.display = "none";
-        location_edit_action.style.display = "block";
+        location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
         tire_brand_action.style.display = "none";
         tire_picture_action.style.display = "none";
@@ -42,14 +42,14 @@ function switchTab(n){
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
         tire_brand_action.style.display = "none";
-        tire_postion_action.style.display = "block";
+        tire_postion_action.style.display = "none";
     }
     else if(n==5){
         
       
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
-        tire_size_action.style.display = "block";
+        tire_size_action.style.display = "none";
         tire_brand_action.style.display = "none";
         tire_picture_action.style.display = "none";
         tire_postion_action.style.display = "none";
@@ -60,7 +60,7 @@ function switchTab(n){
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
-        tire_brand_action.style.display = "block";
+        tire_brand_action.style.display = "none";
         tire_postion_action.style.display = "none";
     }
     else if(n==7){

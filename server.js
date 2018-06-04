@@ -83,6 +83,7 @@ socketio.sockets.on('connection', function(socket)
 //<============= Number Plate ====================>
 socket.on('updateNoPlate', function(noPlate)
 {
+    
    noPlate = ent.encode(noPlate); // Protect from injection
    socket.broadcast.emit('updateNoPlate', {noPlate:noPlate, index:index});
    console.log(noPlate); // Debug
@@ -104,6 +105,7 @@ socket.on('updateDest', function(dest)
 //<============= Truck Model ====================>
 socket.on('updateTruckModel', function(truckModel)
 {
+    console.log("Update Truck Model")
     truckModel = ent.encode(truckModel); // Protect from injection
    socket.broadcast.emit('updateTruckModel', {truckModel:truckModel, index:index});
    // console.log(todolist); // Debug

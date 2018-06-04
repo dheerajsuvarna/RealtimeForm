@@ -50,8 +50,9 @@
             <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
                 <div class="page-content">
                     <div class="demo-grid-3 mdl-grid">
-                            <label style="text-align: center;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto"> Let's Fix your Flat Tire!!</label>
+                            
                         <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <label style="text-align: center;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto"> Let's Fix your Flat Tire!!</label>
                             <img style="width: 100%; height: 100%;display: block;" src="/images/issues/issues_4.svg" alt="image" class="border-tlr-radius">
                            
                         </div>
@@ -65,9 +66,9 @@
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-2">
                 <div class="page-content">
-                        <label style="margin-top:5%;font-family:Helvetica;font-size:1.5rem;margin:auto"> Click a Photo of the front of the Truck</label>
+                        <label class="checkcontainer" style="font-style: normal;font-family:Helvetica;font-size:1.5rem;margin-top: 10%;margin:auto;left:20%"> Click a Photo of the Truck</label>
                     <div id="truckScanPlaceholder">
-                            
+                             
                         <img style="max-width: 100%; max-height: 100%;display: block;" src="/images/placeholders/TruckMasqueBG.svg" alt="image" class="border-tlr-radius">
                         
                    
@@ -94,12 +95,13 @@
                 <div class="navbar">
                         <div id="container">
                                 <button  class="mdl-button mdl-js-button " onclick="switchTab(2)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
-                                <button class="mdl-button mdl-js-button " onclick="switchTab(4)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(4)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
                             </div>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-4">
                 <div class="page-content">
+                    <label class="checkcontainer" style="left:12%;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto"> Select the Position of the Flat Tire</label>
                     <label class="checkcontainer" style="bottom: 71%; left: 40%">
                         <input type="checkbox">
                         <span class="checkmark"></span>
@@ -120,9 +122,6 @@
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-
-
-
                     <label class="checkcontainer" style="bottom: 71%; left: 66%">
                         <input type="checkbox">
                         <span class="checkmark"></span>
@@ -143,27 +142,26 @@
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-
-
-
-
-                    </label>
                     <img style="width: 100%; max-height: 100%;display: block;" src="/images/placeholders/tirePosition.svg" alt="image" class="border-tlr-radius">
 
                 </div>
                 <div class="navbar">
                         <div id="container">
                                 <button  class="mdl-button mdl-js-button " onclick="switchTab(3)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
-                                <button class="mdl-button mdl-js-button " onclick="switchTab(5)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(5)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
                             </div>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-5">
                 <div class="page-content">
-
-                        <span class="checkcontainer" id="diameter_value" style="top:41%;left:25%;"></span>
-                        <span class="checkcontainer" id="radius_value" style="top:40%;left:45%"></span>
-                        <span class="checkcontainer" id="width_value" style="top:42%;left:68%"></span>
+                        <label class="checkcontainer" style="font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto;left:15%"> Enter the Dimensions of the Tire</label>
+                        
+                        <span class="checkcontainer" id="diameter_value" style="top:42%;left:25%;"></span>
+                               
+                                <span class="checkcontainer" id="radius_value" style="top:40%;left:45%"></span>
+                                <span class="checkcontainer" id="width_value" style="top:43%;left:69%"></span>
+                                
+                       
                         <div class="tirecontainer">
                                 <!-- <div class="tire_diameter"><span id="diameter_value"></span></div>
                                 <div class="tire_radius"><span id="radius_value"></span></div>
@@ -171,34 +169,36 @@
                         <img  src="/images/TireSize/TireSizeDefinition.svg" alt="image"
                             class="border-tlr-radius">
                     </div>
-                    
-                    <div class="slidecontainer" style="margin:7%">
-                            Diameter
-                            <input id="diameter" class="mdl-slider mdl-js-slider" type="range" min="245" max="495" step="5" value="350" tabindex="0" >
-                    </div>
-                    
-                    <div class="slidecontainer" style="margin:7%">
-                            Radius
-                            <input id="radius" class="mdl-slider mdl-js-slider" type="range" min="45" max="80" step="5" value="60" tabindex="0">
-                    </div>
-                   
-                    <div class="slidecontainer" style="margin:7%">
-                            Width
-                            <input id="width" class="mdl-slider mdl-js-slider" type="range" min="15" max="24" step="0.5" value="19" tabindex="0">
-                    </div>
-                   
-                    
-                   
+                    <div style="margin-bottom:10%">
+                            
+                            <div class="slidecontainer" style="margin:3%">
+                                    Width
+                                    <input id="diameter" class="mdl-slider mdl-js-slider" type="range" min="245" max="495" step="5" value="350" tabindex="0" >
+                            </div>
+                            <div class="slidecontainer" style="margin:3%">
+                                    Ratio
+                                    <input id="radius" class="mdl-slider mdl-js-slider" type="range" min="45" max="80" step="5" value="60" tabindex="0">
+                            </div>
+                           
+                            
+                            
+                            <div class="slidecontainer" style="margin:3%">
+                                    Diameter
+                                    <input id="width" class="mdl-slider mdl-js-slider" type="range" min="15" max="24" step="0.5" value="19" tabindex="0">
+                            </div>
+                        
+                    </div>        
                 </div>
                 <div class="navbar">
                         <div id="container">
                                 <button  class="mdl-button mdl-js-button " onclick="switchTab(4)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
-                                <button class="mdl-button mdl-js-button " onclick="switchTab(6)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(6)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
                             </div>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-6">
                 <div class="page-content">
+                    
                     <div class="demo-grid-3 mdl-grid">
                         <div onclick="tireSelect(1)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                             <img style="display: block;" src="/images/TireBrands/bridgestone.svg" alt="image" class="border-tlr-radius">
@@ -249,8 +249,8 @@
                     </div>
                     <div class="navbar">
                             <div id="container">
-                                    <button  class="mdl-button mdl-js-button " onclick="switchTab()" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
-                                    <button class="mdl-button mdl-js-button " onclick="switchTab()" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
+                                    <button  class="mdl-button mdl-js-button " onclick="switchTab()" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >CANCEL</button>
+                                    <button class="mdl-button mdl-js-button " onclick="switchTab()" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">CONFIRM</button>
                                 </div>
                     </div>
                 </section>

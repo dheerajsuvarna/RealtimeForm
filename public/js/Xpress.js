@@ -53,8 +53,9 @@ $( document ).ready(function() {
     }
 });
 function request_info(){
+    console.log("Hello its woeking")
    let comment =  document.getElementById("chat_comment_input").value;
-   let writeComment = document.getElementById("chat_commetn_write");
+   let writeComment = document.getElementById("chat_comment_write");
    writeComment.innerText  += "\n"+ comment;
    socket.emit('chat_comment', comment);
    comment.value = "";
@@ -110,42 +111,28 @@ function dkv_request_info(){
  }
 
 function confirm(){
-    document.getElementById("status").src = "images/status_2.png";
+    document.getElementById("status").src = "images/02PreparationWorkshop.svg";
     confirm_btn.style.display = 'none';
-    workshop_btn.style.display = 'block';
-    status_line.innerText = "***** Status: Ticket has been Verified *****"
+    tracking_btn.style.display = 'block';
     current_status = 2;
-    disable_fields();
+   // disable_fields();
     socket.emit('status_2', current_status);
 }
 
-function workshop(){
-    var test = null;
-    document.getElementById("status").src = "images/status_3.png";
-    status_line.innerText = "*** Status: Info Forwarded to Workshop ***"
-    workshop_btn.style.display = 'none';
-    tracking_btn.style.display = 'block';
-    current_status = 3;
-    socket.emit('status_3', test);
-
-}
 function tracking(){
-    
     var test = null;
-    document.getElementById("status").src = "images/status_4.png";
-    status_line.innerText = "*** Status: Service Car is on the Way ***"
+    document.getElementById("status").src = "images/03Servicecar.svg";
     tracking_btn.style.display = 'none';
     invoice_btn.style.display = 'block';
-    current_status = 4;
-    socket.emit('status_4', test);
+    current_status = 3;
+    socket.emit('status_3', test);
 }
 
 function invoice(){   
     var test = null;
-    status_line.innerText = "*********** Status: Ticket Closed ***********"
-    current_status = 5;
-    document.getElementById("status").src = "images/status_5.png";
-    socket.emit('status_5  ', test);
+    current_status = 4;
+    document.getElementById("status").src = "images/04Solved.svg";
+    socket.emit('status_4', test);
 }
 
 
@@ -197,7 +184,7 @@ socket.on('make_comment', function(data) {
     make_comment_write.innerText  += "\n"+ data.comment;
 });
 socket.on('chat_comment', function(data) {
-    var chat_comment_write = document.getElementById("chat_commetn_write");
+    var chat_comment_write = document.getElementById("chat_comment_write");
     chat_comment_write.innerText  += "\n"+ data.comment;
 });
 
@@ -214,10 +201,11 @@ socket.on('update', function(data) {
 //<=====================================================================================================>
 //<============================================ Number Plate ============================================>
 $('#noPlate').blur(function ()
-{
+{   
+    
     var noPlate = $('#noPlate').val(); 
     socket.emit('updateNoPlate', noPlate); 
-    updateNoPlate(noPlate,role);  
+    updateNoPlate(noPlate);  
     return false; 
 });
 
@@ -283,6 +271,7 @@ socket.on('updateDest', function(data) {
 //<============================================ Truck Model ============================================>
 $('#truckModel').blur(function ()
 {
+    console.log("Reaching here")
     var truckModel = $('#truckModel').val(); // Retrieve the value of field - the task
     socket.emit('updateTruckModel', truckModel); // sends task to server, server sends to all other clients connected
     // console.log(task); // Debug
@@ -366,22 +355,15 @@ socket.on('status_5', function() {
 });
 
 function changeimg_status2(){
-    document.getElementById("status").src = "images/status_2.png";
-    status_line.innerText = "***** Status: Ticket has been Verified *****"
+    document.getElementById("status").src = "images/02PreparationWorkshop.svg";
 }
 function changeimg_status3(){
-    document.getElementById("status").src = "images/status_3.png";
-    status_line.innerText = "*** Status: Info Forwarded to Workshop ***"
-    $("#cost_modal").modal()
+    document.getElementById("status").src = "images/03Servicecar.svg";
 }
 function changeimg_status4(){
-    document.getElementById("status").src = "images/status_4.png";
-    status_line.innerText = "*** Status: Service Car is on the Way ***"
+    document.getElementById("status").src = "images/04Solved.svg";
 }
-function changeimg_status4(){
-    document.getElementById("status").src = "images/status_5.png";
-    status_line.innerText = "******* Status: Ticket Closed ********"
-}
+
 function disable_fields(){
     document.getElementById("task").disabled = 'true';
     document.getElementById("dkvNo").disabled = 'true';
