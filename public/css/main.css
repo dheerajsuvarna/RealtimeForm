@@ -228,3 +228,8 @@ img{
 }
 
 
+.truck_data label, .truck_data input {
+  float: none; /* if you had floats before? otherwise inline-block will behave differently */
+  display: inline-block;
+  vertical-align: middle;    
+}

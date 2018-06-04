@@ -12,7 +12,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-green.min.css" />
 <link rel="stylesheet" href="/css/fab.css" />
+<link rel="stylesheet" href="/css/navbar.css" />
 <link rel="stylesheet" href="/css/rotate.css" />
+<link rel="stylesheet" href="/css/btnFooter.css" />      
 <link rel="stylesheet" href="/css/style.css" />
 <link rel="stylesheet" href="/css/checkbox.css" />
 <link rel="stylesheet" href="/css/issue_grid.css" />
@@ -47,35 +49,34 @@
         <main class="mdl-layout__content">
             <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
                 <div class="page-content">
-                    <div class="search-card mdl-card mdl-shadow--2dp" style="display: none" id="search_bar">
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <i class="material-icons">search</i>
-                            <input class="mdl-textfield__input" type="text" id="sample1" />
+                    <div class="demo-grid-3 mdl-grid">
+                            <label style="text-align: center;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto"> Let's Fix your Flat Tire!!</label>
+                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                            <img style="width: 100%; height: 100%;display: block;" src="/images/issues/issues_4.svg" alt="image" class="border-tlr-radius">
+                           
                         </div>
                     </div>
-                    <div class="demo-grid-3 mdl-grid">
-                            <span class="checkcontainer"  style="top:28%;left:45%;">Flat Tire</span>
-                            <span class="checkcontainer"  style="top:50%;left:45%">Battery Issue</span>
-                            <span class="checkcontainer"  style="top:70%;left:45%">Trailer Socket Issue</span>
-                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                            <img style="width: 100%; height: 100%;display: block;" src="/images/issues/issues_1.svg" alt="image" class="border-tlr-radius">
-                        </div>
-                        <!-- <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
-                            <img style="width: 100%; height: 100%;display: block;" src="/images/issues/issues_2.svg" alt="image" class="border-tlr-radius">
-                        </div>
-                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                <img style="width: 100%; height: 100%;display: block;" src="/images/issues/issues_3.svg" alt="image" class="border-tlr-radius">
-                            </div> -->
-                        <div onclick="switchTab(2)" class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone"></div>
+                    <div class="navbar">
+                            <button onclick="switchTab(2)" style="bottom:0;width:100%;background-color:rgb(255,152,0)"class="mdl-button mdl-js-button ">
+                                    Get Started
+                                  </button>
                     </div>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-2">
                 <div class="page-content">
-                       
+                        <label style="margin-top:5%;font-family:Helvetica;font-size:1.5rem;margin:auto"> Click a Photo of the front of the Truck</label>
                     <div id="truckScanPlaceholder">
-                            <label style="font-size:34px">Click a photo of the front of the truck</label>
+                            
                         <img style="max-width: 100%; max-height: 100%;display: block;" src="/images/placeholders/TruckMasqueBG.svg" alt="image" class="border-tlr-radius">
+                        
+                   
+                    </div>
+                    <div class="navbar">
+                            <div id="container">
+                                    <button  class="mdl-button mdl-js-button " onclick="switchTab(1)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                    <button class="mdl-button mdl-js-button " onclick="switchTab(3)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
+                                </div>
                     </div>
                     <div id="dataProof" style="display:none">
                             <input type="text" id="numberPlateResult" class="checkcontainer"  style="top:20%;left:34%;width:39%;height:54px;font-size:35px;"></input>
@@ -89,6 +90,12 @@
                 <div class="page-content">
                     <div id="map" style="width:100%;height:700px"></div>
                     <!-- <img style="width: 100%; max-height: 100%;display: block;" src="/images/placeholders/MapIcon.svg" alt="image" class="border-tlr-radius"> -->
+                </div>
+                <div class="navbar">
+                        <div id="container">
+                                <button  class="mdl-button mdl-js-button " onclick="switchTab(2)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(4)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                            </div>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-4">
@@ -144,6 +151,12 @@
                     <img style="width: 100%; max-height: 100%;display: block;" src="/images/placeholders/tirePosition.svg" alt="image" class="border-tlr-radius">
 
                 </div>
+                <div class="navbar">
+                        <div id="container">
+                                <button  class="mdl-button mdl-js-button " onclick="switchTab(3)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(5)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                            </div>
+                </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-5">
                 <div class="page-content">
@@ -176,6 +189,12 @@
                    
                     
                    
+                </div>
+                <div class="navbar">
+                        <div id="container">
+                                <button  class="mdl-button mdl-js-button " onclick="switchTab(4)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(6)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                            </div>
                 </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-6">
@@ -217,26 +236,50 @@
 
                     </div>
                 </div>
+                <div class="navbar">
+                        <div id="container">
+                                <button  class="mdl-button mdl-js-button " onclick="switchTab(5)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                <button class="mdl-button mdl-js-button " onclick="switchTab(7)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Skip</button>
+                            </div>
+                </div>
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-7">
                     <div class="page-content">
                         <img id="estimateImg" style="width: 100%; max-height: 100%;display: block;" src="/images/EstimationBridgestone.svg" alt="image" class="border-tlr-radius">
+                    </div>
+                    <div class="navbar">
+                            <div id="container">
+                                    <button  class="mdl-button mdl-js-button " onclick="switchTab()" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                    <button class="mdl-button mdl-js-button " onclick="switchTab()" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
+                                </div>
                     </div>
                 </section>
                 <section class="mdl-layout__tab-panel" id="scroll-tab-8">
                         <div class="page-content">
                                 <img style="max-width: 100%; max-height: 100%;display: block;" src="/images/TireFoto.svg" alt="image" class="border-tlr-radius">
                         </div>
+                        <div class="navbar">
+                                <div id="container">
+                                        <button  class="mdl-button mdl-js-button " onclick="switchTab(1)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                        <button class="mdl-button mdl-js-button " onclick="switchTab(3)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
+                                    </div>
+                        </div>
                     </section>
                     <section class="mdl-layout__tab-panel" id="scroll-tab-9">
                             <div class="page-content">
                                 
                             </div>
+                            <div class="navbar">
+                                    <div id="container">
+                                            <button  class="mdl-button mdl-js-button " onclick="switchTab(1)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
+                                            <button class="mdl-button mdl-js-button " onclick="switchTab(3)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
+                                        </div>
+                            </div>
                         </section>
         </main>
     </div>
 
-    <dialog id="dialog" class="mdl-dialog">
+    <!-- <dialog id="dialog" class="mdl-dialog">
             
             <div class="mdl-dialog__content">
             <h4>Enter DKV Card Number</h4>
@@ -246,15 +289,9 @@
             
               <button type="button" class="mdl-button">Continue</button>
             </div>
-          </dialog>
+          </dialog> -->
 
     <!-- Colored FAB button with ripple-->
-    <button class="mdl-button mdl-button--raised mdl-js-button dialog-button" style="display:block">Show Dialog</button>
-    <div class="mdl-sheet__container crossRotate " id="search_action">
-        <button type="button" onclick="revealSearch()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-sheet">
-            <i class='material-icons'>search</i>
-        </button>
-    </div>
 
     <div class="mdl-sheet__container" id="camera_action" style="display:none">
         <input id="imgupload" type="file" accept="image/*;capture=camera" onchange="readURL(this);" style="display:none">

@@ -1,0 +1,14 @@
+/* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+    background-color: rgb(255,152,0);
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.button:hover {
+    background-color:rgb(105,240,174); /* Green */
+}
+/* Style the links inside the navigation bar */
+

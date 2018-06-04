@@ -31,6 +31,13 @@ app.use(express.static('public'))
     response.sendFile(__dirname + '/views/index.html');
 })
 
+.get('/sharedDoc', function(request, response)
+{
+    response.sendFile(__dirname + '/views/sharedDoc.html');
+})
+
+
+
 .get('/xpress', function(request, response)
 {
     response.sendFile(__dirname + '/views/index.html');

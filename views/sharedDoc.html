@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="" xmlns:width="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DKV XPRESS</title>
+</head>
+<!-- <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">  -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-green.min.css" />
+<link rel="stylesheet" href="/css/fab.css" />
+<link rel="stylesheet" href="/css/navbar.css" />
+<link rel="stylesheet" href="/css/rotate.css" />
+<link rel="stylesheet" href="/css/btnFooter.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/checkbox.css" />
+<link rel="stylesheet" href="/css/issue_grid.css" />
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyDeFMfwMzVFXM1JGgiZRwgHAXYS_uJnG-M"></script> -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeFMfwMzVFXM1JGgiZRwgHAXYS_uJnG-M&libraries=drawing&callback=initMap"
+         async defer></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeFMfwMzVFXM1JGgiZRwgHAXYS_uJnG-M&callback=myMap"></script>
+
+<body onload="getLocation()">
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Xpress</span>
+            </div>
+        </header>
+
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+                <div class="page-content">
+                    <div class="demo-grid-3 mdl-grid">
+                        <img id="status" style="text-align: center;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto" src="/images/01Xpress.svg"></img>
+                    </div>
+                    <div style="margin:15%">
+                        <div class="truck_data" id="Truck_data">
+                                <b><label style="font-size:18px">Truck Data:</label></b>
+                            <div style="margin:5%">
+                                
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <b><label style="font-size:15px" for="truck_model">Truck Model:</label></b>
+                                    <input style="width:75%" class="mdl-textfield__input" type="text" id="truck_model" />
+                                    <label style="width:75%" class="mdl-textfield__label" for="truck_model"></label> 
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <b><label style="font-size:15px" for="license_plate">License Plate</label></b>
+                                    <input style="width:50%" class="mdl-textfield__input" type="text" id="license_plate" />
+                                    <label style="width:50%" class="mdl-textfield__label" for="license_plate"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Spare Tire">
+                                <b><label style="font-size:18px">Spare Tire:</label></b>
+                                <div style="margin:5%">
+                                    
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <b><label style="font-size:15px" for="tire_size">Tire Size:</label></b>
+                                        <input style="width:50%" class="mdl-textfield__input" type="text" id="tire_size" />
+                                        <label style="width:50%" class="mdl-textfield__label" for="tire_size"></label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <b><label style="font-size:15px" for="tire_brand">Tire Brand:</label></b>                                
+                                        <input style="width:50%" class="mdl-textfield__input" type="text" id="tire_brand" />
+                                        <label style="width:50%" class="mdl-textfield__label" for="tire_brand"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="further_information">
+                                    <b><label style="font-size:18px" >Further Information:</label></b>
+                                    <div style="margin:5%">
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            
+                                            <input class="mdl-textfield__input" type="textarea" id="chatbox" />
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+
+                    <div class="navbar">
+                        <button style="bottom:0;width:100%;background-color:rgb(255,152,0)" class="mdl-button mdl-js-button ">
+                            Confirm
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+
+    <div class="mdl-sheet__container" id="confirm_action">
+        <a href="/xpress" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-sheet">
+            <i class='material-icons'>comment</i>
+        </a>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js'></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="/js/fab.js"></script>
+    <script src="/js/switchTab.js"></script>
+    <script src="/js/rotate.js"></script>
+    <script src="/js/map.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/dialog.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/Xpress.js"></script>
+
+    <!-- <script src="node_modules/image-to-base64/image-to-base64.js"></script> -->
+    <script>
+        function myMap() {
+
+            var lat_co, lng_co;
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+
+                }
+            }
+
+            function showPosition(position) {
+                //x.innerHTML = "Latitude: " + position.coords.latitude + 
+                // "<br>Longitude: " + position.coords.longitude;
+                lat_co = position.coords.latitude
+                lng_co = position.coords.longitude
+            }
+            var myCenter = new google.maps.LatLng(lat_co, lng_co);
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {
+                center: myCenter,
+                zoom: 5
+            };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+        }
+    </script>
+</body>
+
+
+</html>
