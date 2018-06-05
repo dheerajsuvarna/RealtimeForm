@@ -55,6 +55,7 @@ app.use(express.static('public'))
 
 
 .post('/ticket/truck_scan_api',truck_scan_api)
+.post('/ticket/infoForDoc',sendInfo)
 
 // Redirects to todolist homepage if wrong page is called
 .use(function(request, response, next)
@@ -207,10 +208,14 @@ server.listen(process.env.PORT || 8080, function(){
   /// OPEN alpr identification
 
 
-
+function sendInfo(request,response,next){
+var data= request.body.data;
+console.log("data ==> " + data)
+response.sendFile(__dirname + '/views/sharedDoc.html');
+}
 
 function truck_scan_api(request,response){
-var api = new OpenalprApi.DefaultApi()
+var api = new OpenalprApi.DefaultApi();
 var dataRet;
 var imageBytes = request.body.image; // {String} The image file that you wish to analyze encoded in base64 
 var secretKey = "sk_af77a2481546119f83fce161"; // {String} The secret key used to authenticate your account.  You can view your  secret key by visiting  https://cloud.openalpr.com/ 

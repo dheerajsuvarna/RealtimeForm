@@ -6,6 +6,10 @@ var tracking_btn = document.getElementById('tracking');
 var invoice_btn = document.getElementById('invoice');
 var current_status = 0;
 var status_line = document.getElementById("status_line");
+var tire_size ;
+var tire_brand;
+var truck_model;
+var license_plate;
 // Connect to socket.io
 var socket = io.connect();
 var issue_comment_btn = document.getElementById('issue_comment_btn');
@@ -24,7 +28,28 @@ socket.on('updateTask', function(todolist) {
 });
 
 
+function sendInfo(){
+        
+        //tire_size = diameter_slider.value + " / " + radius_slider.value + " R " + width_slider.value;
+        tire_size = "385 / 60 R 22.5";
+      console.log("Reaching Here=============>")      
+          var data = {};
+          data.push(tire_size);
+          data.push(tire_brand);
+          data.push(truck_model);
+          data.push(license_plate);
 
+          $.ajax({  
+            type: "POST",  
+            url: "/ticket/infoForDoc",  
+            data: {'data': data},  
+            
+            success: function(data) {  
+                console.log("worked")
+            }  
+        });  
+        }
+       
 $( document ).ready(function() {
     //getLocation();
     
@@ -53,7 +78,7 @@ $( document ).ready(function() {
     }
 });
 function request_info(){
-    console.log("Hello its woeking")
+   console.log("Hello its woeking")
    let comment =  document.getElementById("chat_comment_input").value;
    let writeComment = document.getElementById("chat_comment_write");
    writeComment.innerText  += "\n"+ comment;
