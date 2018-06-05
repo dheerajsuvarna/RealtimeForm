@@ -28,32 +28,21 @@ socket.on('updateTask', function(todolist) {
 });
 
 
-function sendInfo(){
-        
-        //tire_size = diameter_slider.value + " / " + radius_slider.value + " R " + width_slider.value;
-        tire_size = "385 / 60 R 22.5";
-      console.log("Reaching Here=============>")      
-          var data = {};
-          data.push(tire_size);
-          data.push(tire_brand);
-          data.push(truck_model);
-          data.push(license_plate);
 
-          $.ajax({  
-            type: "POST",  
-            url: "/ticket/infoForDoc",  
-            data: {'data': data},  
-            
-            success: function(data) {  
-                console.log("worked")
-            }  
-        });  
-        }
        
 $( document ).ready(function() {
     //getLocation();
     
     var role = getAllUrlParams(window.location.href).role;
+    
+    let truck_model = document.getElementById("truckModel");
+    let no_plate = document.getElementById("noPlate");
+    let tire_brand = document.getElementById("tyreBrand");
+    let tire_size = document.getElementById("diameter")
+    tire_brand.value = getAllUrlParams(window.location.href).tire_brand;
+    no_plate.value = getAllUrlParams(window.location.href).no_plate;
+    truck_model.value = getAllUrlParams(window.location.href).truck_model;
+    tire_size.value = getAllUrlParams(window.location.href).tire_size;
    // var myHeader = document.getElementById("role");
     //myHeader.innerText = "Role : " + role;
 

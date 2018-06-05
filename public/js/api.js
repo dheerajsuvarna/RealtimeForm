@@ -21,14 +21,14 @@ function readURL(input) {
              let npr = document.getElementById("numberPlateResult");
              let mor = document.getElementById("modelResult");
              let axis = document.getElementById("makeResult");
-             
+             btn.style.display = "block";
+             prevDiv.style.display = "none";
          truck_model = data.results[0].vehicle.make[0].name;
          license_plate =  data.results[0].plate ;
              npr.value = data.results[0].plate ;
              mor.value = data.results[0].vehicle.make[0].name;
              axis.value = "2 Axis"
-             btn.style.display = "block";
-             prevDiv.style.display = "none";
+             
         }  
     });  
     }

@@ -45,22 +45,12 @@ function tireSelect(brand){
 
 function sendInfo(){
         
-    tire_size = diameter_slider.value + " / " + radius_slider.value + " R " + width_slider.value;
+    tire_size = diameter_slider.value + "/" + radius_slider.value + "R" + width_slider.value;
     //tire_size = "385 / 60 R 22.5";
-  console.log("Reaching Here=============>")      
-      var data = [];
-      data.push(tire_size);
-      data.push(tire_brand);
-      data.push(truck_model);
-      data.push(license_plate);
 
-      $.ajax({  
-        type: "POST",  
-        url: "/ticket/infoForDoc",  
-        data: {'data': data},  
-        
-        success: function(data) {  
-            console.log("worked")
-        }  
-    });  
+    
+    let url = "https://shared-doc.herokuapp.com?role=TRUCK%20DRIVER&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
+    let url1 = "http://localhost:8080/sharedDoc?role=TRUCK%20DRIVER&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
+  console.log("Reaching Here=============>")      
+  window.location.replace(url)
     }
