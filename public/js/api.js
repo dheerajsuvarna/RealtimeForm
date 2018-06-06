@@ -5,7 +5,7 @@ function readURL(input) {
     if (input.files && input.files[0]) {
     var reader = new FileReader();
     reader.onload = function (e) {
-        
+        $('#loading').html('<img src="http://preloaders.net/preloaders/287/Filling%20broken%20ring.gif">');
       var image = e.target.result.split(',')[1];
       $.ajax({  
         type: "POST",  
@@ -22,6 +22,10 @@ function readURL(input) {
              let npr = document.getElementById("numberPlateResult");
              let mor = document.getElementById("modelResult");
              let axis = document.getElementById("makeResult");
+             let tick = document.getElementById("camera_tick")
+             let cam = document.getElementById("camera_action");
+             cam.style.display = "none";
+             tick.style.display = "block"
              btn.style.display = "block";
              prevDiv.style.display = "none";
          truck_model = data.results[0].vehicle.make[0].name;

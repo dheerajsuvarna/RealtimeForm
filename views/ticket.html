@@ -66,18 +66,19 @@
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-2">
                 <div class="page-content">
-                        <label class="checkcontainer" style="font-style: normal;font-family:Helvetica;font-size:1.5rem;margin-top: 10%;margin:auto;left:20%"> Click a Photo of the Truck</label>
+                       <b> <label class="checkcontainer" style="font-style: normal;font-family:Helvetica;font-size:1.5rem;margin-top: 0%;margin:auto;left:10%"> Take a photo of the front of the truck</label></b>
                     <div id="truckScanPlaceholder">
                              
                         <img style="max-width: 100%; max-height: 100%;display: block;" src="/images/placeholders/TruckMasqueBG.svg" alt="image" class="border-tlr-radius">
                         
-                   
+                        <div class="checkcontainer" style="top:40%;left:40%" id="loading"></div>
                     </div>
                     <div class="navbar">
                             <div id="container">
                                     <button  class="mdl-button mdl-js-button " onclick="switchTab(1)" style="background-color:rgb(255,152,0)" type="button home-button" id="button1" >Back</button>
                                     <button class="mdl-button mdl-js-button " onclick="switchTab(3)" style="background-color:rgb(255,152,0)" type="button contact-button" id="button2">Next</button>
                                 </div>
+
                     </div>
                     <div id="dataProof" style="display:none">
                             <input type="text" id="numberPlateResult" class="checkcontainer"  style="top:22%;left:34%;width:39%;height:54px;font-size:35px;"></input>
@@ -101,7 +102,8 @@
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-4">
                 <div class="page-content">
-                    <label class="checkcontainer" style="left:12%;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto"> Select the Position of the Flat Tire</label>
+                    
+                    <b><label class="checkcontainer" style="left:12%;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto"> Select the Position of the Flat Tire</label></b>
                     <label class="checkcontainer" style="bottom: 68.5%; left: 38%">
                         <input type="checkbox">
                         <span class="checkmark"></span>
@@ -154,7 +156,7 @@
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-5">
                 <div class="page-content">
-                        <label class="checkcontainer" style="font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto;left:15%"> Enter the Dimensions of the Tire</label>
+                        <b><label class="checkcontainer" style="left:12%;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto; margin-bottom: 10%"> Enter the Dimension of the Tire</label></b>
                         
                         <span class="checkcontainer" id="diameter_value" style="top:45%;left:25%;"></span>
                                
@@ -200,8 +202,9 @@
                 <div class="page-content">
                     
                     <div class="demo-grid-3 mdl-grid">
-                        <div onclick="tireSelect('bridgestone')" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                            <img style="display: block;" src="/images/TireBrands/bridgestone.svg" alt="image" class="border-tlr-radius">
+                            <b><label class="checkcontainer" style="left:12%;font-style: normal;font-family:Helvetica;font-size:1.5rem;margin:auto; margin-bottom: 10%"> Select the Position of the Flat Tire</label></b>
+                        <div style="margin-top:10%"onclick="tireSelect('bridgestone')" class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                            <img style="display: block;" src="/images/Bridgestone.svg" alt="image" class="border-tlr-radius">
                         </div>
                         <div onclick="tireSelect('continental')" class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
                             <img style="display: block;" src="/images/TireBrands/Continental.svg" alt="image" class="border-tlr-radius">
@@ -245,7 +248,7 @@
             </section>
             <section class="mdl-layout__tab-panel" id="scroll-tab-7">
                     <div class="page-content">
-                        <img id="estimateImg" style="width: 100%; max-height: 100%;display: block;" src="/images/EstimationBridgestone.svg" alt="image" class="border-tlr-radius">
+                        <img id="estimateImg" style="width: 100%; max-height: 100%;display: block;" src="/images/XpressTransition.svg" alt="image" class="border-tlr-radius">
                     </div>
                     <div class="navbar">
                             <div id="container">
@@ -299,7 +302,11 @@
             <i class='material-icons'>camera_alt</i>
         </button>
     </div>
-
+    <div class="mdl-sheet__container" id="camera_tick" style="display:none">
+            <button id="OpenImgUpload" onclick="switchTab(3)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-sheet">
+                <i class='material-icons'>tick</i>
+            </button>
+        </div>
     <div class="mdl-sheet__container" id="location_edit_action" style="display:none">
         <button onclick="switchTab(4)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-sheet">
             <i class='material-icons'>arrow_forward</i>
