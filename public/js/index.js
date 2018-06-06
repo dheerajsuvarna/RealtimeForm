@@ -38,7 +38,7 @@ function tireSelect(brand){
     tire_brand = brand;
     let img = document.getElementById("estimateImg")
     
-        img.src = "/images/EstimationBridgestone.svg"
+       
         switchTab(7)
    
 }
