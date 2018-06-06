@@ -19,7 +19,11 @@ var sp_comment_btn = document.getElementById('sp_comment_btn');
 var truck_comment_btn = document.getElementById('truck_comment_btn');
 var model_comment_btn = document.getElementById('model_comment_btn');
 
+
+
 // On first connect, retrieves all tasks
+
+
 socket.on('updateTask', function(todolist) {
     $('#todolist').empty(); // Refresh the list
     todolist.forEach(function(task, index) {
@@ -29,7 +33,17 @@ socket.on('updateTask', function(todolist) {
 
 
 
-       
+$(window).load(function(){
+    if(role=="td"){
+        let data = [];
+        // data.push(tire_brand)
+        // data.push(tire_size)
+        // data.push(no_plate)
+        // data.push(truck_model)
+        let msg = "truck driver"
+        socket.emit("init",msg)
+    }
+})
 $( document ).ready(function() {
     //getLocation();
     
@@ -45,6 +59,22 @@ $( document ).ready(function() {
     tire_size.value = getAllUrlParams(window.location.href).tire_size;
    // var myHeader = document.getElementById("role");
     //myHeader.innerText = "Role : " + role;
+    
+    
+
+
+    socket.on('init', function(data) {
+
+    let truck_model = document.getElementById("truckModel");
+    let no_plate = document.getElementById("noPlate");
+    let tire_brand = document.getElementById("tyreBrand");
+    let tire_size = document.getElementById("diameter")
+    tire_brand.value = data.tire_brand;
+    no_plate.value =  data.no_plate;
+    truck_model.value =  data.truck_model;
+    tire_size.value =  data.truck_size;
+    });
+
 
     if(role == 'esc'){
         confirm_btn.style.display = 'block';

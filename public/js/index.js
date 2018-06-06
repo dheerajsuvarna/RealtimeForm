@@ -49,8 +49,8 @@ function sendInfo(){
     //tire_size = "385 / 60 R 22.5";
 
     
-    let url = "https://shared-doc.herokuapp.com/sharedDoc?role=TRUCK%20DRIVER&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
-    let url1 = "http://localhost:8080/sharedDoc?role=TRUCK%20DRIVER&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
+    let url = "https://shared-doc.herokuapp.com/sharedDoc?role=td&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
+    let url1 = "http://localhost:8080/sharedDoc?role=td&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
   console.log("Reaching Here=============>")      
   window.location.replace(url)
     }

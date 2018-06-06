@@ -73,6 +73,14 @@ socketio.sockets.on('connection', function(socket)
        socket.broadcast.emit('update', {task:task, index:index});
        // console.log(todolist); // Debug
     });
+
+    socket.on('init', function(data)
+{
+   data = ent.encode(data); // Protect from injection
+   //socket.broadcast.emit('init', {data: data});
+   console.log(data)
+   // console.log(todolist); // Debug
+});
 //<============= Issue ====================>
     socket.on('update', function(task)
     {

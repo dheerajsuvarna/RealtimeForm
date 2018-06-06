@@ -1,6 +1,7 @@
 function switchTab(n){
     search_action = document.getElementById("search_action")
     camera_action = document.getElementById("camera_action")
+    camera_tick = document.getElementById("camera_tick")
     location_edit_action =  document.getElementById("location_edit_action")
     tire_size_action = document.getElementById("tire_size_action")
     tire_postion_action = document.getElementById("tire_postion_action")
@@ -10,7 +11,7 @@ function switchTab(n){
     console.log("Value of N ==> " + n)
     if(n==1){
         
-       
+        camera_tick.style.display = "none";
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
@@ -27,7 +28,7 @@ function switchTab(n){
     }
     else if(n==3){
       
-        
+        camera_tick.style.display = "none";
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
@@ -37,7 +38,7 @@ function switchTab(n){
     }
     else if(n==4){
         
-        
+        camera_tick.style.display = "none";
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
@@ -56,7 +57,7 @@ function switchTab(n){
     }
     else if(n==6){
         
-       
+        camera_tick.style.display = "none";
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
@@ -65,7 +66,7 @@ function switchTab(n){
     }
     else if(n==7){
         
-     
+        camera_tick.style.display = "none";
         camera_action.style.display = "none";
         location_edit_action.style.display = "none";
         tire_size_action.style.display = "none";
