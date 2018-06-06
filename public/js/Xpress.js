@@ -33,17 +33,21 @@ socket.on('updateTask', function(todolist) {
 
 
 
-$(window).load(function(){
-    if(role=="td"){
-        let data = [];
-        // data.push(tire_brand)
-        // data.push(tire_size)
-        // data.push(no_plate)
-        // data.push(truck_model)
-        let msg = "truck driver"
-        socket.emit("init",msg)
+    function notify(){
+            let data = [];
+            let truck_model = document.getElementById("truckModel");
+    let no_plate = document.getElementById("noPlate");
+    let tire_brand = document.getElementById("tyreBrand");
+    let tire_size = document.getElementById("diameter")
+            data.push(tire_brand.value)
+            data.push(tire_size.value)
+            data.push(no_plate.value)
+            data.push(truck_model.value)
+
+            console.log("data ===> " + JSON.stringify(data))
+            socket.emit("init",data)  
     }
-})
+   
 $( document ).ready(function() {
     //getLocation();
     
@@ -63,17 +67,7 @@ $( document ).ready(function() {
     
 
 
-    socket.on('init', function(data) {
-
-    let truck_model = document.getElementById("truckModel");
-    let no_plate = document.getElementById("noPlate");
-    let tire_brand = document.getElementById("tyreBrand");
-    let tire_size = document.getElementById("diameter")
-    tire_brand.value = data.tire_brand;
-    no_plate.value =  data.no_plate;
-    truck_model.value =  data.truck_model;
-    tire_size.value =  data.truck_size;
-    });
+   
 
 
     if(role == 'esc'){
@@ -236,6 +230,21 @@ socket.on('update', function(data) {
     updateTask(data.task, data.index); 
      
  });
+
+
+ socket.on('init', function(data) {
+    console.log("got data ===> " + JSON.stringify(data))
+    let truck_model = document.getElementById("truckModel");
+    let no_plate = document.getElementById("noPlate");
+    let tire_brand = document.getElementById("tyreBrand");
+    let tire_size = document.getElementById("diameter")
+    console.log("tyre brand " + data.tire_brand)
+    tire_brand.value = data.tire_brand;
+    no_plate.value =  data.no_plate;
+    truck_model.value =  data.truck_model;
+    tire_size.value =  data.tire_size;
+    });
+
 
  function updateTask(task, index)
 {

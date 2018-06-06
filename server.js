@@ -76,10 +76,15 @@ socketio.sockets.on('connection', function(socket)
 
     socket.on('init', function(data)
 {
-   data = ent.encode(data); // Protect from injection
-   //socket.broadcast.emit('init', {data: data});
-   console.log(data)
-   // console.log(todolist); // Debug
+    // Protect from injection
+    console.log(JSON.stringify(data[0]))
+    let tire_brand = data[0];
+    let tire_size = data[1];
+    let truck_model = data[3];
+    let no_plate = data[2];
+   socket.broadcast.emit('init', {tire_brand: tire_brand, tire_size: tire_size, truck_model: truck_model, no_plate: no_plate});
+   
+   
 });
 //<============= Issue ====================>
     socket.on('update', function(task)
