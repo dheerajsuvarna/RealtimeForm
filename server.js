@@ -22,20 +22,6 @@ app.use(bodyParser.urlencoded({
 limit: '50mb',
 extended: true
 }));
-
-var MongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
-
-// Connection URL
-var url = 'mongodb://dkv:pass123@ds145325.mlab.com:45325/dkv_expo';
-
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  db.close();
-});
 // Use public folder for JS file (Client)
 app.use(express.static('public'))
 
@@ -69,7 +55,6 @@ app.use(express.static('public'))
 
 
 .post('/ticket/truck_scan_api',truck_scan_api)
-.post('/ticket/infoForDoc',sendInfo)
 
 // Redirects to todolist homepage if wrong page is called
 .use(function(request, response, next)
@@ -222,12 +207,6 @@ server.listen(process.env.PORT || 8080, function(){
   /// OPEN alpr identification
 
 
-function sendInfo(request,response,next){
-var data= request.body.data;
-//console.log("data ==> " + data)
-console.log("Reaching here")
-response.redirect( '/');
-}
 
 function truck_scan_api(request,response){
 var api = new OpenalprApi.DefaultApi();
@@ -249,22 +228,8 @@ var callback = function(error, data) {
     console.log('Vehicle Number Plate ' + JSON.stringify(data.results[0].plate));
     console.log('Vehicle Make ' + data.results[0].vehicle.make[0].name);
     console.log('Vehicle Model ' + data.results[0].vehicle.make_model[0].name);
-    return response.redirect('/demo2');
+    return response.send(data);
   }
 };
 api.recognizeBytes(imageBytes, secretKey, country, opts, callback);
-var insertInfo = function(db, callback) {
-    // Get the documents collection
-    var collection = db.collection('documents');
-    // Insert some documents
-    collection.insertMany([
-      {a : 1}, {a : 2}, {a : 3}
-    ], function(err, result) {
-      assert.equal(err, null);
-      assert.equal(3, result.result.n);
-      assert.equal(3, result.ops.length);
-      console.log("Inserted 3 documents into the collection");
-      callback(result);
-    });
-  }
 }

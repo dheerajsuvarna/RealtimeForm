@@ -16,6 +16,7 @@ function readURL(input) {
             // alert('Vehicle Number Plate ' + data.results[0].plate +
             //  '\n Vehicle Make ' + data.results[0].vehicle.make[0].name + 
             //  '\n Vehicle Model ' + data.results[0].vehicle.make_model[0].name);  
+            console.log(JSON.stringify(data))
              let btn = document.getElementById("dataProof");
              let prevDiv = document.getElementById("truckScanPlaceholder");
              let npr = document.getElementById("numberPlateResult");
