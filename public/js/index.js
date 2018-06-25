@@ -49,7 +49,7 @@ function sendInfo(){
     //tire_size = "385 / 60 R 22.5";
 
     
-    let url = "https://xpress.herokuapp.com/sharedDoc?role=td&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
+    let url = "https://pacific-river-68406.herokuapp.com/sharedDoc?role=td&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
     let url1 = "http://localhost:8080/sharedDoc?role=td&tire_brand="+ tire_brand+ "&truck_model="+truck_model + "&tire_size="+tire_size+"&no_plate=" + license_plate
         
   window.location.replace(url)
