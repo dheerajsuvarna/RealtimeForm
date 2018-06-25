@@ -7,7 +7,7 @@
  var tire_size ;
 var tire_brand;
 var truck_model = "Mercedes";
-var license_plate = "YAKU900"
+var license_plate = "SYL3621"
  diameter_value.innerHTML = diameter_slider.value;
  radius_value.innerHTML = radius_slider.value;
  width_value.innerHTML = width_slider.value;

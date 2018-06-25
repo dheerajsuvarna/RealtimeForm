@@ -19,10 +19,16 @@ function showPosition(position) {
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: lat_co, lng: lng_co},
-      zoom: 14
+      center: {lat: 47.478627, lng: 9.506488},
+      zoom: 17
     });
-
+    var marker = new google.maps.Marker({
+      map: map,
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      position: {lat: 47.478627, lng: 9.506488}
+    });
+    marker.addListener('click', toggleBounce);
     var drawingManager = new google.maps.drawing.DrawingManager({
       drawingMode: google.maps.drawing.OverlayType.MARKER,
       drawingControl: true,
@@ -30,7 +36,6 @@ function initMap() {
         position: google.maps.ControlPosition.TOP_CENTER,
         drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
       },
-      markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
       circleOptions: {
         fillColor: '#ffff00',
         fillOpacity: 1,
@@ -40,6 +45,14 @@ function initMap() {
         zIndex: 1
       }
     });
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
     drawingManager.setMap(map);
+    marker.setMap(map)    
   }
 

@@ -82,8 +82,8 @@
 
                     </div>
                     <div id="dataProof" style="display:none">
-                            <input type="text" id="numberPlateResult" class="checkcontainer"  style="top:25%;left:34%;width:39%;height:54px;font-size:35px;"></input>
-                            <input type="text" id="makeResult" class="checkcontainer"  style="top:50%;left:28%;width:20%;"></input>
+                            <input type="text" id="numberPlateResult" class="checkcontainer"  style="top:24%;left:34%;width:40%;height:50px;font-size:29px;"></input>
+                            <input type="text" id="makeResult" class="checkcontainer"  style="top:51%;left:30%;width:20%;"></input>
                             <input  type="text" id="modelResult" class="checkcontainer"  style="top:74%;left:28%;width:30%;"></input>
                             <img style="max-width: 100%; max-height: 100%;display: block;" src="/images/confirm_data2.svg" alt="image" class="border-tlr-radius">
                         </div>
@@ -356,36 +356,7 @@
   
     <!-- <script src="node_modules/image-to-base64/image-to-base64.js"></script> -->
     <script>
-        function myMap() {
-
-            var lat_co, lng_co;
-
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                } else {
-
-                }
-            }
-
-            function showPosition(position) {
-                //x.innerHTML = "Latitude: " + position.coords.latitude + 
-                // "<br>Longitude: " + position.coords.longitude;
-                lat_co = position.coords.latitude
-                lng_co = position.coords.longitude
-            }
-            var myCenter = new google.maps.LatLng(lat_co, lng_co);
-            var mapCanvas = document.getElementById("map");
-            var mapOptions = {
-                center: myCenter,
-                zoom: 5
-            };
-            var map = new google.maps.Map(mapCanvas, mapOptions);
-            var marker = new google.maps.Marker({
-                position: myCenter
-            });
-            marker.setMap(map);
-        }
+       
     </script>
     <script>
     

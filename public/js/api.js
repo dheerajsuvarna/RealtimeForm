@@ -53,10 +53,10 @@ function readURL(input) {
                   btn.style.display = "block";
                   prevDiv.style.display = "none";
               truck_model = "Mercedes"
-              license_plate =  "SYL 3621"
-                  npr.value = "SYL 3621"
+              license_plate =  "SYL3621"
+                  npr.value = "SYL3621"
                   mor.value = "Mercedes"
-                  axis.value = "SYL 3621" 
+                  axis.value = "2-Axis" 
     }
     setTimeout(function(){
         showDiv();
