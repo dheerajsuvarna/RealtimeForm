@@ -225,7 +225,7 @@ function truck_scan_api(request,response){
 var api = new OpenalprApi.DefaultApi();
 var dataRet;
 var imageBytes = request.body.image; // {String} The image file that you wish to analyze encoded in base64 
-var secretKey = "sk_af77a2481546119f83fce161"; // {String} The secret key used to authenticate your account.  You can view your  secret key by visiting  https://cloud.openalpr.com/ 
+var secretKey = "sk_910d51f031f094bb76e7c4a1"; // {String} The secret key used to authenticate your account.  You can view your  secret key by visiting  https://cloud.openalpr.com/ 
 var country = "eu"; // {String} Defines the training data used by OpenALPR.  \"us\" analyzes  North-American style plates.  \"eu\" analyzes European-style plates.  This field is required if using the \"plate\" task  You may use multiple datasets by using commas between the country  codes.  For example, 'au,auwide' would analyze using both the  Australian plate styles.  A full list of supported country codes  can be found here https://github.com/openalpr/openalpr/tree/master/runtime_data/config 
 var opts = { 
   'recognizeVehicle': 1, // {Integer} If set to 1, the vehicle will also be recognized in the image This requires an additional credit per request 
